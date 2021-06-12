@@ -42,9 +42,9 @@
             </script>
             <div class="hidden flex md:w-1/5 sm:1/3" x-bind:class="{'hidden': !openDrawer, 'block' : openDrawer}">
                 <div class="sm:min-h-screen antialiased bg-white w-full ">
-                    <div class="flex flex-row px-3 bg-white py-3 h-16 items-center t ">
+                    <div class="flex flex-row px-3 bg-white py-3 h-16 items-center justify-center">
                         <div class="relative w-auto">
-                            <img src="/images/logo.png" alt="main-logo" class=" rounded-lg h-full w-full object-contain ">
+                            <img src="/images/logo.png" alt="main-logo" class=" rounded-lg h-full w-20 object-contain ">
                         </div>
                     </div>
                     <x-sidebar />
