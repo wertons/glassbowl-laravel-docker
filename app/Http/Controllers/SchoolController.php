@@ -213,6 +213,19 @@ class SchoolController extends Controller
         return redirect()->back();
     }
 
+    public function cancelDownloadSchool($id)
+    {
+        $school = School::findOrFail($id);
+        $user = User::findOrFail(auth()->user()->id);
+
+        try {
+            $school->users()->detach($user);
+        } catch (QueryException $e) {
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
+
     public function downloadedSchools()
     {
         $user = User::findOrFail(auth()->user()->id);

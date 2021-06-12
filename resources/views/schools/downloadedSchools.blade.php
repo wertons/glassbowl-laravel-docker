@@ -26,7 +26,7 @@
                         {{$school->created_at}}
                     </td>
                     <td class="actions">
-
+                        <x-form.action-button color="red" type="post" class="fa-download" :href="route('schools.cancelDownloadSchool', ['school'=>$school])" />
                     </td>
                 </tr>
                 @endforeach

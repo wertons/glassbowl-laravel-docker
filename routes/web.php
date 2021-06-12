@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('schools/{team}/store', 'App\Http\Controllers\SchoolController@teamStore')->name('schools.teamStore');
     Route::post('schools/{school}/share', 'App\Http\Controllers\SchoolController@share')->name('schools.share');
     Route::post('schools/{school}/getSchool', 'App\Http\Controllers\SchoolController@getSchool')->name('schools.getSchool');
+    Route::post('schools/{school}/cancelDownloadSchool', 'App\Http\Controllers\SchoolController@cancelDownloadSchool')->name('schools.cancelDownloadSchool');
     Route::post('schools/{school}/unshare', 'App\Http\Controllers\SchoolController@unshare')->name('schools.unshare');
     Route::get('schools/{team}/create', 'App\Http\Controllers\SchoolController@teamCreate')->name('schools.teamCreate');
     Route::resource('schools', SchoolController::class);
