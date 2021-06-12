@@ -1,14 +1,11 @@
 <template>
     <x-app-layout>
         <x-slot name="header">
-            <x-header title="My Schools">
-                @if($team == null)
-                <x-form.action-button class="fa-plus" color="green" :href="route('schools.create', [])" />
-                @else
-                <x-form.action-button class="fa-plus" color="green"
-                    :href="route('schools.teamCreate', ['team' => $team])" />
-                @endif
-            </x-header>
+            <Header title="My Schools">
+                <ActionButton class="fa-plus" color="green" :href="route('schools.create', [])" v-if="team == null"/>
+                <ActionButton class="fa-plus" color="green"
+                    :href="route('schools.teamCreate', ['team' => $team])" v-else/>
+            </Header>
         </x-slot>
         <div class="overflow-x-auto">
             <table>
@@ -32,20 +29,17 @@
                             {{ school.created_at }}
                         </td>
                         <td class="actions">
-                            @if($school->user_id != null)
-                            @if($school->shared == false)
-                            <x-form.action-button color="green" type="post" class="fa-share"
-                                :href="route('schools.share', ['school'=>$school])" />
-                            @else
-                            <x-form.action-button color="red" type="post" class="fa-share"
-                                :href="route('schools.unshare', ['school'=>$school])" />
-                            @endif
-                            @endif
-                            <x-form.action-button color="green" class="fa-edit"
+
+                            <ActionButton color="green" type="post" class="fa-share"
+                                :href="route('schools.share', ['school'=>$school])" v-if="school.user_id != null && school.shared == false" />
+                            <ActionButton color="red" type="post" class="fa-share"
+                                :href="route('schools.unshare', ['school'=>$school])" v-if="school.user_id != null && school.shared != false"/>
+            
+                            <ActionButton color="green" class="fa-edit"
                                 :href="route('schools.edit', ['school'=>$school])" />
-                            <x-form.action-button color="yellow" class="fa-fish"
+                            <ActionButton color="yellow" class="fa-fish"
                                 :href="route('fish.index', ['school'=>$school])" />
-                            <x-form.action-button color="red" type="form" class="fa-trash"
+                            <ActionButton color="red" type="form" class="fa-trash"
                                 :href="route('schools.destroy', ['school'=>$school])" />
                         </td>
                     </tr>
@@ -56,4 +50,19 @@
     </x-app-layout>
 </template>
 <script>
+import Header from './../components/Header.vue';
+import FormActionButton from './../components/form/FormActionButton.vue';
+export default {
+    data(){
+        return{
+            schools: this.schools
+        }
+    },
+    created(){
+        
+    },
+    methods:{
+
+    }
+};
 </script>

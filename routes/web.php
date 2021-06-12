@@ -3,6 +3,8 @@
 use App\Http\Controllers\FishController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\SpaController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Route::get('/{any}', [SpaController::class,'index'])->where('any', '.*');
 
 Route::get('/', function () {
     return view('welcome');

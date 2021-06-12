@@ -1,3 +1,6 @@
+<template>
+    
+
 <x-app-layout>
     <x-slot name="header">
         <x-header title="My Fishes">
@@ -8,27 +11,26 @@
         <table>
             <thead>
                 <tr>
-                    <th>{{__('Title')}}</th>
-                    <th>{{__('Description')}}</th>
-                    <th>{{__('URL')}}</th>
-                    <th>{{__('Created')}}</th>
-                    <th class="actions">{{__('Actions')}}</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>URL</th>
+                    <th>Created</th>
+                    <th class="actions">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($fishs as $i=>$fish)
-                <tr>
+                <tr v-for="fish in fishes" :key="fish.id">
                     <td>
-                        {{$fish->title}}
+                        {{ fish.title }}
                     </td>
                     <td>
-                        {{$fish->description}}
+                        {{ fish.description }}
                     </td>
                     <td>
-                        {{$fish->url}}
+                        {{ fish.url }}
                     </td>
                     <td>
-                        {{$fish->created_at}}
+                        {{ fish.created_at }}
                     </td>
 
                     <td class="actions">
@@ -36,9 +38,24 @@
                         <x-form.action-button color="red" type="form" class="fa-trash" :href="route('fish.destroy', ['school' => $school, 'fish' => $fish])" />
                     </td>
                 </tr>
-                @endforeach
             </tbody>
 
         </table>
     </div>
 </x-app-layout>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            
+        }
+    },
+    created(){
+        
+    },
+    methods:{
+
+    }
+};
+</script>
