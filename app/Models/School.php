@@ -35,4 +35,13 @@ class School extends Model
     {
         return $this->hasMany(Fish::class);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($school) { // before delete() method call this
+            $school->fishs()->delete();
+        });
+    }
 }
