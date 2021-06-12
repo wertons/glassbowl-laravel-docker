@@ -9,3 +9,10 @@ window.toggleDrawer = (openDrawer) => {
   };
 
 window.Cookies = Cookies;
+
+window.Vue = require('vue');
+Vue.component('schools-index',require('./components/schools/index.vue').default);
+
+const app = new Vue({
+  el: '#app'
+});
