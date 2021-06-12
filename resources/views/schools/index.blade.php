@@ -31,10 +31,12 @@
                         {{$school->created_at}}
                     </td>
                     <td class="actions">
+                        @if($school->user_id != null)
                         @if($school->shared == false)
                         <x-form.action-button color="green" type="post" class="fa-share" :href="route('schools.share', ['school'=>$school])" />
                         @else
                         <x-form.action-button color="red" type="post" class="fa-share" :href="route('schools.unshare', ['school'=>$school])" />
+                        @endif
                         @endif
                         <x-form.action-button color="green" class="fa-edit" :href="route('schools.edit', ['school'=>$school])" />
                         <x-form.action-button color="yellow" class="fa-fish" :href="route('fish.index', ['school'=>$school])" />
