@@ -193,7 +193,7 @@ class SchoolController extends Controller
 
     public function marketplace()
     {
-        $schools = School::where('shared', true)->get();
+        $schools = School::where('shared', true)->where('user_id', '!=', auth()->user()->id)->get();
 
         return view('schools.marketplace', [
             'schools' => $schools,
