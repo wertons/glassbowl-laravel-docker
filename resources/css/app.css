@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+table {
+    @apply w-full text-left border shadow mb-2 bg-white border-blue-100;
+}
+
+table thead tr {
+    @apply font-bold bg-blue-400;
+}
+
+table thead tr th {
+    @apply p-1;
+}
+
+table thead tr th.actions {
+    @apply text-right pr-3;
+}
+
+table tbody tr {
+    @apply hover:bg-blue-100;
+}
+
+td {
+    padding: 3px;
+    flex: none;
+}
+
+tr {
+    @apply border-b-2;
+}
+
+td.actions {
+    @apply w-36 flex-grow-0 text-right pr-3;
+}
