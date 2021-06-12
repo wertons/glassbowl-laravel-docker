@@ -29,4 +29,17 @@ class Team extends Model
     {
         return $this->HasMany(School::class);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($team) { // before delete() method call this
+            foreach ($team->schools as $school) {
+
+                $school->fishs()->delete();
+            }
+            $team->schools()->delete();
+        });
+    }
 }
