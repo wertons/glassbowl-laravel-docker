@@ -10,6 +10,7 @@
                     <th>{{__('Title')}}</th>
                     <th>{{__('Description')}}</th>
                     <th>{{__('Created')}}</th>
+                    <th>{{__('Owner')}}</th>
                     <th class="actions">{{__('Actions')}}</th>
                 </tr>
             </thead>
@@ -24,6 +25,9 @@
                     </td>
                     <td>
                         {{$school->created_at}}
+                    </td>
+                    <td>
+                        {{$school->user->email}}
                     </td>
                     <td class="actions">
                         <x-form.action-button color="green" type="post" class="fa-download" :href="route('schools.getSchool', ['school'=>$school])" />
