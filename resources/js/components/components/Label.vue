@@ -1,6 +1,11 @@
 <template>
     <label class="block font-medium text-sm text-gray-700">
-        {{ value ?? slot }}
+        <div v-if="value">
+            {{ value }}
+        </div>
+        <div v-else>
+            {{slot}}
+        </div>
     </label>
 
 </template>

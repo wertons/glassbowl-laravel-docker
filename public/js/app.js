@@ -3801,6 +3801,11 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -3815,6 +3820,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes.js */ "./resources/js/routes.js");
 /* harmony import */ var _components_spa_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/spa.vue */ "./resources/js/components/spa.vue");
 /* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.es5.js");
@@ -3834,6 +3840,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 
 
+vue__WEBPACK_IMPORTED_MODULE_5__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_6__.default);
+
 window.toggleDrawer = function (openDrawer) {
   var newState = !openDrawer;
   js_cookie__WEBPACK_IMPORTED_MODULE_0___default().set('drawerOpen', newState, {
@@ -3844,9 +3852,9 @@ window.toggleDrawer = function (openDrawer) {
 };
 
 window.Cookies = (js_cookie__WEBPACK_IMPORTED_MODULE_0___default());
-var router = new VueRouter({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__.default({
   mode: 'history',
-  routes: _routes_js__WEBPACK_IMPORTED_MODULE_1__.routes
+  router: _routes_js__WEBPACK_IMPORTED_MODULE_1__.default
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_5__.default({
   el: '#app',
@@ -3981,6 +3989,12 @@ var routes = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
       return __webpack_require__.e(/*! import() */ "resources_js_components_teams_TeamInvite_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/teams/TeamInvite.vue */ "./resources/js/components/teams/TeamInvite.vue"));
     }),
     name: 'team.invite'
+  }, {
+    path: '/test',
+    component: vue__WEBPACK_IMPORTED_MODULE_0__.default.component('ApplicationLogo', function () {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_components_ApplicationLogo_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/components/ApplicationLogo.vue */ "./resources/js/components/components/ApplicationLogo.vue"));
+    }),
+    name: 'components.logo'
   }],
   base: '/'
 });
@@ -21691,7 +21705,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("testerino")])
+  return _c(
+    "div",
+    [
+      _c("router-link", { attrs: { to: "/schools" } }, [
+        _vm._v("go to schools")
+      ]),
+      _vm._v(" "),
+      _c("router-view", [_vm._v("test")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37116,7 +37140,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_schools_SchoolIndex_vue":1,"resources_js_components_schools_SchoolCreate_vue":1,"resources_js_components_schools_SchoolEdit_vue":1,"resources_js_components_schools_SchoolDownloadedSchools_vue":1,"resources_js_components_fish_FishIndex_vue":1,"resources_js_components_teams_TeamIndex_vue":1,"resources_js_components_teams_TeamCreate_vue":1,"resources_js_components_teams_TeamEdit_vue":1,"resources_js_components_teams_TeamInvitations_vue":1,"resources_js_components_teams_TeamMembers_vue":1,"resources_js_components_teams_TeamInvite_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_schools_SchoolIndex_vue":1,"resources_js_components_schools_SchoolCreate_vue":1,"resources_js_components_schools_SchoolEdit_vue":1,"resources_js_components_schools_SchoolDownloadedSchools_vue":1,"resources_js_components_fish_FishIndex_vue":1,"resources_js_components_teams_TeamIndex_vue":1,"resources_js_components_teams_TeamCreate_vue":1,"resources_js_components_teams_TeamEdit_vue":1,"resources_js_components_teams_TeamInvitations_vue":1,"resources_js_components_teams_TeamMembers_vue":1,"resources_js_components_teams_TeamInvite_vue":1,"resources_js_components_components_ApplicationLogo_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

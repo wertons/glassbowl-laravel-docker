@@ -10,4 +10,10 @@ class SpaController extends Controller
     {
         return view('spa');
     }
+    public function getUser(){
+        return [
+            'name' => auth()->user()->name,
+            'email' => auth()->user()->email
+        ];
+    }
 }

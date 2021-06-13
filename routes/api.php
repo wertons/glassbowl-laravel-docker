@@ -48,4 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('teams/{team}/invite', 'App\Http\Controllers\TeamController@invite')->name('teams.invite');
     Route::post('teams/{team}/invite', 'App\Http\Controllers\TeamController@sendInvite')->name('teams.sendInvite');
     Route::resource('teams', TeamController::class);
+
+    // Spa
+    Route::get('user','App\Http\Controllers\SpaController@getUser')->name('user.getUser');
 });

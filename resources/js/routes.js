@@ -69,6 +69,11 @@ export const routes = new VueRouter({
                 component: Vue.component('TeamInvite', () => import('./components/teams/TeamInvite.vue')),
                 name: 'team.invite',
             },
+            {
+                path: '/test',
+                component: Vue.component('ApplicationLogo', () => import('./components/components/ApplicationLogo.vue')),
+                name: 'components.logo',
+            },
 
         ],
     base: '/',
