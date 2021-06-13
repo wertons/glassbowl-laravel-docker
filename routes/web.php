@@ -56,4 +56,13 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('teams', TeamController::class);
 });
 
+// OAuth routes
+// Google
+Route::get('login/google', 'App\Http\Controllers\LoginController@redirectToGoogle')->name('login.google');
+Route::get('login/google/callback', 'App\Http\Controllers\LoginController@handleGoogleCallback');
+
+// Github
+Route::get('login/github', 'App\Http\Controllers\LoginController@redirectToGithub')->name('login.github');
+Route::get('login/github/callback', 'App\Http\Controllers\LoginController@handleGithubCallback');
+
 require __DIR__ . '/auth.php';
