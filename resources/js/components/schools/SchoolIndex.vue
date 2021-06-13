@@ -31,16 +31,16 @@
                         <td class="actions">
 
                             <FormActionButton color="green" type="post" class="fa-share"
-                                :href="`schools/${school}/share`" v-if="school.user_id != null && school.shared == false" />
+                                :href="`schools/${school.id}/share`" v-if="school.user_id != null && school.shared == false" />
                             <FormActionButton color="red" type="post" class="fa-share"
-                                :href="`schools/${school}/unshare`" v-if="school.user_id != null && school.shared != false"/>
+                                :href="`schools/${school.id}/unshare`" v-if="school.user_id != null && school.shared != false"/>
             
                             <FormActionButton color="green" class="fa-edit"
-                                :href="`/schools/edit/:school`" />
+                                :href="`/schools/edit/${school.id}`" />
                             <FormActionButton color="yellow" class="fa-fish"
-                                :href="`/fish/${school}`" />
+                                :href="`/fish/${school.id}`" />
                             <FormActionButton color="red" type="form" class="fa-trash"
-                                :href="`schools/${school}`" />
+                                :href="`schools/${school.id}`" />
                         </td>
                     </tr>
                 </tbody>

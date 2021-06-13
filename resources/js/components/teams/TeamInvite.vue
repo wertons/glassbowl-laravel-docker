@@ -15,7 +15,7 @@
             <input type="text" name="email" id="email" v-model="email">
 
             <div class="flex flex-row space-x-1">
-                <Button href="{{route('teams.members', ['team' => $team]) }}" color="red"
+                <Button color="red"
                     icon="arrow-left">Cancel</Button>
                 <Button color="green" icon="save" type="button" @click="inviteUser()">Save</Button>
             </div>
@@ -26,8 +26,8 @@
 </template>
 <script>
     import Header from './../components/Header.vue';
-    import ApplicationLogo from './../components/form/ApplicationLogo.vue';
-    import Label from './../components/form/Label.vue';
+    import ApplicationLogo from './../components/ApplicationLogo.vue';
+    import Label from './../components/Label.vue';
     import Button from './../components/Button.vue';
     import AuthCard from './../components/AuthCard.vue';
     import FormActionButton from './../components/form/FormActionButton.vue';

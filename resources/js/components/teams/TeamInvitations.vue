@@ -1,10 +1,8 @@
 <template>
 
-
     <x-app-layout>
         <slot name="header">
-            <Header title="My Teams">
-                <FormActionButton class="fa-plus" color="green" :href="`/teams/create`" />
+            <Header title="My Invitations">
             </Header>
         </slot>
         <div class="overflow-x-auto">
@@ -19,8 +17,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <div v-for="team in teams" :key="team.id">
 
+                    <div v-for="team in teams" :key="team">
                         <div v-for="user in team.users" :key="user">
                             <tr v-if="!user.pivot.joined && user.id == uid">
                                 <td>
@@ -33,26 +31,24 @@
                                     {{team.created_at}}
                                 </td>
                                 <td>
+
                                     <div v-for="user in team.users" :key="user">
                                         <div v-if="user.pivot.isOwner">
                                             {{user.email}}
                                         </div>
                                     </div>
+
                                 </td>
                                 <td class="actions">
-                                    <FormActionButton color="green" class="fa-columns"
-                                        :href="`/schools/${team.id}`" />
-                                    <FormActionButton color="blue" class="fa-users"
-                                        :href="`/teams/${team.id}/members`" />
-                                    <FormActionButton color="green" class="fa-edit"
-                                        :href="`/teams/edit/${team.id}`" />
-                                    <FormActionButton color="red" type="form" class="fa-trash"
-                                        :href="`teams/${team.id}`" />
+                                    <FormActionButton color="green" type="post" class="fa-check"
+                                        :href="acceptInvite()" />
+                                    <FormActionButton color="red" type="post" class="fa-times"
+                                        :href="declineInvite()" />
                                 </td>
                             </tr>
                         </div>
-
                     </div>
+
                 </tbody>
 
             </table>
@@ -78,26 +74,46 @@
         },
         data() {
             return {
+                teamId: $route.params.team ,
                 teams,
                 uid
             }
         },
         created() {
-                axios
-                .post(`api/teams`,{
+            axios
+                .post(`api/teams/invitations`, {
                     _token: csrf_token,
                     _method: 'GET',
-                },{
-                    "Content-Type":"application/x-www-form-urlencoded"
-                }).then( (ev) =>{
-                    teams = ev.data.teams,
+                }, {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }).then((ev) => {
+                    teams = ev.data.teams;
                     uid = ev.data.uid;
-
-                }
-                );
+                });
         },
         methods: {
-
+            acceptInvite: function (ev) {
+                axios
+                    .post(`api/teams/${teamId}/accept`, {
+                        _token: csrf_token,
+                        _method: 'POST',
+                    }, {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }).then(
+                        $router.go(-1)
+                    );
+            },
+            declineInvite: function (ev) {
+                axios
+                    .post(`api/teams/${teamId}/decline`, {
+                        _token: csrf_token,
+                        _method: 'POST',
+                    }, {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }).then(
+                        $router.go(-1)
+                    );
+            }
         }
     };
 

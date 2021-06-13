@@ -41,8 +41,33 @@ export const router = new VueRouter({
             },
             {
                 path: '/teams',
-                component: Vue.component('TeamIndex', () => import('./components/team/TeamIndex.vue')),
+                component: Vue.component('TeamIndex', () => import('./components/teams/TeamIndex.vue')),
                 name: 'team.index',
+            },
+            {
+                path: '/teams/create',
+                component: Vue.component('TeamCreate', () => import('./components/teams/TeamCreate.vue')),
+                name: 'team.create',
+            },
+            {
+                path: '/teams/edit/:team',
+                component: Vue.component('TeamEdit', () => import('./components/teams/TeamEdit.vue')),
+                name: 'team.edit',
+            },
+            {
+                path: '/teams/invitations',
+                component: Vue.component('TeamInvitations', () => import('./components/teams/TeamInvitations.vue')),
+                name: 'team.invitations',
+            },
+            {
+                path: '/teams/:team/members',
+                component: Vue.component('TeamMembers', () => import('./components/teams/TeamMembers.vue')),
+                name: 'team.members',
+            },
+            {
+                path: '/teams/:team/invite',
+                component: Vue.component('TeamInvite', () => import('./components/teams/TeamInvite.vue')),
+                name: 'team.invite',
             },
 
         ],

@@ -38,8 +38,8 @@
 </x-guest-layout>
 </template>
 <script>
-import ApplicationLogo from './../components/form/ApplicationLogo.vue';
-import Label from './../components/form/Label.vue';
+import ApplicationLogo from './../components/ApplicationLogo.vue';
+import Label from './../components/Label.vue';
 import Button from './../components/Button.vue';
 import Input from './../components/Input.vue';
 import AuthCard from './../components/AuthCard.vue';

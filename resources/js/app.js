@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
-import {routes} from './routes';
+import {routes} from './routes.js';
 
 import App from './components/spa.vue';
 import VueAxios from 'vue-axios';
@@ -19,8 +19,6 @@ window.toggleDrawer = (openDrawer) => {
   };
 
 window.Cookies = Cookies;
-
-Vue.component('SchoolIndex',require('./components/schools/SchoolIndex.vue').default);
 
 const router = new VueRouter({
   mode: 'history',

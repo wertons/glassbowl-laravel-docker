@@ -20,10 +20,15 @@ class TeamController extends Controller
         $teams = Team::whereHas('users', function ($query) {
             return $query->where('id', auth()->user()->id);
         })->get();
+        foreach ($teams as $team) {
+            $team["users"] = $team->users;
+        };
 
-        return view('teams.index', [
+        return [
             'teams' => $teams,
-        ]);
+            'uid' => auth()->user()->id
+
+        ];
     }
 
     /**
@@ -77,9 +82,9 @@ class TeamController extends Controller
     public function edit(TeamRequest $request, $id)
     {
         $team = Team::findOrFail($id);
-        return view('teams.edit', [
+        return[
             'team' => $team,
-        ]);
+        ];
     }
 
     /**
@@ -118,10 +123,10 @@ class TeamController extends Controller
     public function members(TeamRequest $request, $id)
     {
         $team = Team::findOrFail($id);
-
-        return view('teams.members', [
+        $team['users'] = $team->users;
+        return [
             'team' => $team,
-        ]);
+        ];
     }
 
     public function invite(TeamRequest $request, $id)
@@ -151,10 +156,13 @@ class TeamController extends Controller
         $teams = Team::whereHas('users', function ($query) {
             return $query->where('id', auth()->user()->id);
         })->get();
-
-        return view('teams.invitations', [
+        foreach ($teams as $team) {
+            $team["users"] = $team->users;
+        };
+        return [
             'teams' => $teams,
-        ]);
+            'uid' => auth()->user()->id
+        ];
     }
 
     public function accept($id)

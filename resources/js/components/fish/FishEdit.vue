@@ -28,7 +28,7 @@
 <script>
 import Header from './../components/Header.vue';
 import FormButton from './../components/form/FormButton.vue';
-import Label from './../components/form/Label.vue';
+import Label from './../components/Label.vue';
 
     export default {
   components: { Header, Label },

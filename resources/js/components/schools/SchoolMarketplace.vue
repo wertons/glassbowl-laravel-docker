@@ -31,7 +31,8 @@
                         {{school.user.email}}
                     </td>
                     <td class="actions">
-                        <FormActionButton color="green" type="post" class="fa-download" :href="route('schools.getSchool', ['school'=>$school])" />
+                        <FormActionButton color="green" type="post" class="fa-download" 
+                        :href="`schools/${school.id}/getSchool`" />
                     </td>
                 </tr>
             </tbody>
