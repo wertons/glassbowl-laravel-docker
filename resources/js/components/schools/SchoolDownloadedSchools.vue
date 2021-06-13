@@ -1,10 +1,7 @@
 <template>
-    
-
-<x-app-layout>
+    <x-app-layout>
     <slot name="header">
-        <Header title="My Fishes">
-            <FormActionButton class="fa-plus" color="green" :href="`fish/${school}/create`" />
+        <Header title="My downloaded Schools">
         </Header>
     </slot>
     <div class="overflow-x-auto">
@@ -13,29 +10,27 @@
                 <tr>
                     <th>Title</th>
                     <th>Description</th>
-                    <th>URL</th>
                     <th>Created</th>
+                    <th>Owner</th>
                     <th class="actions">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="fish in fishes" :key="fish.id">
+                <tr v-for="school in schools" :key="school">
                     <td>
-                        {{ fish.title }}
+                        {{ school.title}}
                     </td>
                     <td>
-                        {{ fish.description }}
+                        {{school.description}}
                     </td>
                     <td>
-                        {{ fish.url }}
+                        {{school.created_at}}
                     </td>
                     <td>
-                        {{ fish.created_at }}
+                        {{school.user.email}}
                     </td>
-
                     <td class="actions">
-                        <FormActionButton color="green" class="fa-edit" :href="`fish/${school}/${fish}/edit`" />
-                        <FormActionButton color="red" type="form" class="fa-trash" :href="`fish/${school}/${fish}`" />
+                        <FormActionButton color="red" type="post" class="fa-download" :href="`schools/${school}/cancelDownloadSchool`" />
                     </td>
                 </tr>
             </tbody>
@@ -44,27 +39,25 @@
     </div>
 </x-app-layout>
 </template>
+
 <script>
 import Header from './../components/Header.vue';
 import FormActionButton from './../components/form/FormActionButton.vue';
-
-
 export default {
     data(){
         return{
-            fishes: [],
-            school: $route.params.school
+            schools,
         }
     },
     created(){
-         axios
-                .post(`api/fish/${school}`,{
+          axios
+                .post(`api/schools/downloadedSchools`,{
                     _token: csrf_token,
                     _method: 'GET',
                 },{
                     "Content-Type":"application/x-www-form-urlencoded"
                 }).then( (ev) =>{
-                    fishes = ev.data.fishes
+                    schools = ev.data.schools
                 }
                 );
     },

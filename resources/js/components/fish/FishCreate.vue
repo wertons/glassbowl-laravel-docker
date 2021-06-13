@@ -1,31 +1,24 @@
 <template>
     
-
 <x-app-layout>
+      <slot name="header">
         <Header title="Create new Fish">
         </Header>
-
-    <?php echo Form::open(['route' => ['fish.store', 'school' => $school->id]]) ?>
-    @csrf
-    @method('POST')
-
+    </slot>
     <div class="flex flex-col">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" v-model="title">
 
         <label for="description">Description (Optional)</label>
-        <input type="text" name="description" id="description">
+        <input type="text" name="description" id="description" v-model="description">
 
         <label for="url">URL</label>
-        <input type="text" name="url" id="url">
+        <input type="text" name="url" id="url" v-model="url">
 
         <div class="flex flex-row space-x-1">
-            <FormButton href="{{route('fish.index', ['school' => $school->id]) }}" color="red" icon="arrow-left">Cancel</FormButton>
-            <FormButton color="green" icon="save" type="submit">Save</FormButton>
+            <FormButton  color="red" icon="arrow-left">Cancel</FormButton>
+            <FormButton color="green" icon="save" type="submit" @click="createFish()">Save</FormButton>
         </div>
-
-        <?php echo Form::close(); ?>
-
     </div>
 
 </x-app-layout>
@@ -33,20 +26,36 @@
 <script>
 import Header from './../components/Header.vue';
 import FormButton from './../components/form/FormButton.vue';
-import Label from '../../../../vendor/laravel/breeze/stubs/inertia-vue/resources/js/Components/Label.vue';
+import Label from './../components/form/Label.vue';
 
     export default {
   components: { Header, Label },
         data() {
             return {
-                school: this.school
+                school: this.school,
+                title,
+                description,
+                url
             }
         },
         created() {
 
         },
         methods: {
-
+            createFish: function (ev) {
+                axios
+                .post(`api/fish/${school}`,{
+                    _token: csrf_token,
+                    _method: 'POST',
+                    title,
+                    description,
+                    url
+                },{
+                    "Content-Type":"application/x-www-form-urlencoded"
+                }).then(
+                    $router.go(-1)
+                );
+            },
         }
     };
 

@@ -20,11 +20,12 @@ class FishController extends Controller
 
         $school = School::findOrFail($schoolId);
 
-        return view('fish.index', [
-            'fishs' => $fishs,
+        return [
+            'fishes' => $fishs,
             'school' => $school
-        ]);
+        ];
     }
+
 
     /**
      * Show the form for creating a new resource.

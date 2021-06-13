@@ -9,13 +9,40 @@ export const router = new VueRouter({
         [
             {
                 path: '/',
-                component: Vue.component('welcome', () => import('./components/Welcome.vue')),
-                name: 'welcome',
+                component: Vue.component('spa', () => import('./components/spa.vue')),
+                name: 'Home',
             },
             {
-                path: '/roadmap',
-                component: Vue.component('roadmap-index', () => import('./components/Roadmap/index.vue')),
-                name: 'roadmap.index',
+                path: '/schools',
+                alias:'/schools/:team',
+                component: Vue.component('SchoolIndex', () => import('./components/schools/SchoolIndex.vue')),
+                name: 'school.index',
+            },
+            {
+                path: '/schools/create',
+                alias:'/schools/create/:team',
+                component: Vue.component('SchoolCreate', () => import('./components/schools/SchoolCreate.vue')),
+                name: 'school.create',
+            },
+            {
+                path: '/schools/edit/:school',
+                component: Vue.component('SchoolEdit', () => import('./components/schools/SchoolEdit.vue')),
+                name: 'school.edit',
+            },
+            {
+                path: '/schools/downloaded',
+                component: Vue.component('SchoolDownloadedSchools', () => import('./components/schools/SchoolDownloadedSchools.vue')),
+                name: 'school.downloaded',
+            },
+            {
+                path: '/fish/:school',
+                component: Vue.component('FishIndex', () => import('./components/fish/FishIndex.vue')),
+                name: 'fish.index',
+            },
+            {
+                path: '/teams',
+                component: Vue.component('TeamIndex', () => import('./components/team/TeamIndex.vue')),
+                name: 'team.index',
             },
 
         ],

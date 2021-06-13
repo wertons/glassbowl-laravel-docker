@@ -22,10 +22,10 @@ class SchoolController extends Controller
     {
         $schools = School::where('user_id', auth()->user()->id)->paginate(config('crud.paginate'));
 
-        return view('schools.index', [
+        return [
             'schools' => $schools,
             'team' => null
-        ]);
+        ];
     }
 
     public function teamIndex(TeamRequest $request, $id)
@@ -33,10 +33,10 @@ class SchoolController extends Controller
         $team = Team::findOrFail($id);
         $schools = School::where('team_id', $id)->paginate(config('crud.paginate'));
 
-        return view('schools.index', [
+        return [
             'schools' => $schools,
             'team' => $team
-        ]);
+        ];
     }
 
     /**
@@ -103,7 +103,7 @@ class SchoolController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -115,9 +115,9 @@ class SchoolController extends Controller
     public function edit(SchoolManagementRequest $request, $id)
     {
         $school = School::findOrFail($id);
-        return view('schools.edit', [
+        return [
             'school' => $school,
-        ]);
+        ];
     }
 
     /**
@@ -234,8 +234,8 @@ class SchoolController extends Controller
         foreach ($user->sharedSchools as $school) {
             $schools->add($school);
         }
-        return view('schools.downloadedSchools', [
+        return [
             'schools' => $schools,
-        ]);
+        ];
     }
 }
