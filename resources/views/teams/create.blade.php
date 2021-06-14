@@ -12,7 +12,7 @@
         <?php echo Form::label('name', __('Name'), ['class' => '']) ?>
         <?php echo Form::text('name', '', ['class' => '']) ?>
 
-        <?php echo Form::label('description', __('Description (Optional)'), ['class' => '']) ?>
+        <?php echo Form::label('description', __('Description'), ['class' => '']) ?>
         <?php echo Form::text('description', '', ['class' => '']) ?>
 
         <div class="flex flex-row space-x-1 mt-4">

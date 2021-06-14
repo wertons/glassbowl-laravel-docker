@@ -32167,6 +32167,7 @@ td.actions {
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .tooltip .tooltiptext::after {

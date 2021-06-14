@@ -38,7 +38,7 @@
                         @endforeach
                     </td>
                     <td class="actions">
-                        <x-form.action-button tooltip="Schools" color="green" class="fa-layer-group" :href="route('schools.teamIndex', ['team'=>$team])" />
+                        <x-form.action-button tooltip="Schools" color="yellow" class="fa-layer-group" :href="route('schools.teamIndex', ['team'=>$team])" />
                         <x-form.action-button tooltip="Members" color="blue" class="fa-users" :href="route('teams.members', ['team'=>$team])" />
                         <x-form.action-button tooltip="Edit" color="green" class="fa-edit" :href="route('teams.edit', ['team'=>$team])" />
                         <x-form.action-button tooltip="Delete" color="red" type="form" class="fa-trash" :href="route('teams.destroy', ['team'=>$team])" />
