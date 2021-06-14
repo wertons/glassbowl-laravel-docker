@@ -32,8 +32,8 @@
                     </td>
 
                     <td class="actions">
-                        <x-form.action-button color="green" class="fa-edit" :href="route('fish.edit', ['school'=>$school , 'fish' => $fish])" />
-                        <x-form.action-button color="red" type="form" class="fa-trash" :href="route('fish.destroy', ['school' => $school, 'fish' => $fish])" />
+                        <x-form.action-button tooltip="Edit" color="green" class="fa-edit" :href="route('fish.edit', ['school'=>$school , 'fish' => $fish])" />
+                        <x-form.action-button tooltip="Delete" color="red" type="form" class="fa-trash" :href="route('fish.destroy', ['school' => $school, 'fish' => $fish])" />
                     </td>
                 </tr>
                 @endforeach

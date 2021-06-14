@@ -30,7 +30,7 @@
                         {{$school->user->email}}
                     </td>
                     <td class="actions">
-                        <x-form.action-button color="green" type="post" class="fa-download" :href="route('schools.getSchool', ['school'=>$school])" />
+                        <x-form.action-button tooltip="Download" color="green" type="post" class="fa-download" :href="route('schools.getSchool', ['school'=>$school])" />
                     </td>
                 </tr>
                 @endforeach
