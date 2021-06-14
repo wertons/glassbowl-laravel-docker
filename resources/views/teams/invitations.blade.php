@@ -37,8 +37,8 @@
                         @endforeach
                     </td>
                     <td class="actions">
-                        <x-form.action-button color="green" type="post" class="fa-check" :href="route('teams.accept', ['team'=>$team])" />
-                        <x-form.action-button color="red" type="post" class="fa-times" :href="route('teams.decline', ['team'=>$team])" />
+                        <x-form.action-button tooltip="Accept" color="green" type="post" class="fa-check" :href="route('teams.accept', ['team'=>$team])" />
+                        <x-form.action-button tooltip="Decline" color="red" type="post" class="fa-times" :href="route('teams.decline', ['team'=>$team])" />
                     </td>
                 </tr>
                 @endif
