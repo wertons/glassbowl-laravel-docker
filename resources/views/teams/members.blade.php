@@ -1,7 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
         <x-header title="Members">
-            <x-form.action-button class="fa-plus" color="green" :href="route('teams.invite', ['team' => $team])" />
         </x-header>
     </x-slot>
     <div class="overflow-x-auto">
@@ -15,6 +14,26 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    
+            <?php echo Form::open(['route' => ['teams.sendInvite', 'team' => $team]]) ?>
+            @csrf
+            @method('POST')
+        
+                    <td>
+                    </td>
+                    <td>
+                        <?php echo Form::text('email', '', ['class' => '']) ?>                    </td>
+                    <td>
+                    </td>
+                    <td class="actions">
+                        <div class="flex flex-row space-x-1 mt-4">
+                            <x-form.button color="green" icon="plus" type="submit">Invite User</x-form.button>
+                        </div>
+                    </td>
+                    <?php echo Form::close(); ?>
+
+                </tr>
                 @foreach ($team->users as $i=>$user)
                 <tr>
                     <td>
