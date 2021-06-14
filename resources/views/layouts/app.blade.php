@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ URL::asset('/images/logo.png') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ URL::asset('/images/logo.png') }}" type="image/x-icon" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -47,7 +47,7 @@
                 <div class="sm:min-h-screen antialiased bg-white w-full ">
                     <div class="flex flex-row px-3 bg-white py-3 h-16 items-center justify-center">
                         <div class="relative w-auto">
-                            <img src="/images/logo.png" alt="main-logo" class=" rounded-lg h-full w-20 object-contain ">
+                            <a href="/schools"><img src="/images/logo.png" alt="main-logo" class=" rounded-lg h-full w-20 object-contain "></a>
                         </div>
                     </div>
                     <x-sidebar />
