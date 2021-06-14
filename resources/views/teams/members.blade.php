@@ -23,7 +23,8 @@
                     <td>
                     </td>
                     <td>
-                        <?php echo Form::text('email', '', ['class' => '']) ?>                    </td>
+                        <input class="" name="email" type="text" value="" placeholder="Email to invite">
+                    </td>
                     <td>
                     </td>
                     <td class="actions">
