@@ -26,7 +26,7 @@
                     <td>@if($user->pivot->joined == true)
                         <i class="rounded-full p-2 my-1 bg-green-500 text-white transition-colors duration-200 transform hover:bg-green-800 fas fa-check red"></i>
                         @else
-                        <i class="rounded-full p-2 my-1 bg-red-500 text-white transition-colors duration-200 transform hover:bg-red-800 fas fa-check red"></i>
+                        <i class="rounded-full p-2 my-1 bg-red-500 text-white transition-colors duration-200 transform hover:bg-red-800 fas fa-times red"></i>
                         @endif
                     </td>
                     <td class="actions">

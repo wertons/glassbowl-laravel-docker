@@ -20,7 +20,7 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        $schools = School::where('user_id', auth()->user()->id)->paginate(config('crud.paginate'));
+        $schools = School::where('user_id', auth()->user()->id);
 
         return view('schools.index', [
             'schools' => $schools,

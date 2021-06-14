@@ -9,7 +9,7 @@
         </x-nav-link>
 
         <x-nav-link class="pl-9 flex flex-row items-center" :href="route('schools.marketplace')" :active="request()->routeIs('schools.marketplace')">
-            <i class="fa fa-store mr-2"></i> {{ __('Marketplace') }}
+            <i class="fa fa-store mr-2"></i> {{ __('Aquarium') }}
             <i class="fas fa-chevron-right ml-auto mr-2"></i>
         </x-nav-link>
 
