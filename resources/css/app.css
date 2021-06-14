@@ -32,5 +32,5 @@ tr {
 }
 
 td.actions {
-    @apply w-36 flex-grow-0 text-right pr-3;
+    @apply w-48 flex-grow-0 text-right pr-3;
 }
