@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SchoolCheckPublicRequest;
 use App\Models\Fish;
 use App\Models\School;
 use Illuminate\Database\QueryException;
@@ -31,7 +32,7 @@ class FishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexShared($schoolId)
+    public function indexShared(SchoolCheckPublicRequest $request,$schoolId)
     {
         
         $fishs = Fish::where('school_id', $schoolId)->paginate(config('crud.paginate'));
