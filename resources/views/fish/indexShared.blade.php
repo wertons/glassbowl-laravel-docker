@@ -2,7 +2,6 @@
     <x-slot name="header">
         <x-header title="My Fishes">
             <x-button class="mr-8 bg-blue-600 text-white-800" onclick="openAllFish()" >All fishes</x-button>
-            <x-form.action-button class="fa-plus" color="green" :href="route('fish.create', ['school' => $school])"  />
         </x-header>
     </x-slot>
     <div class="overflow-x-auto">
@@ -35,9 +34,7 @@
                     </td>
 
                     <td class="actions">
-                        <x-form.action-button tooltip="Edit" color="green" class="fa-edit" :href="route('fish.edit', ['school'=>$school , 'fish' => $fish])" />
-                        <x-form.action-button tooltip="Delete" color="red" type="form" class="fa-trash" :href="route('fish.destroy', ['school' => $school, 'fish' => $fish])" />
-                    </td>
+                </td>
                     <td></td>
                 </tr>
                 @endforeach

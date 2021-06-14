@@ -17,10 +17,15 @@ table thead tr th {
 table thead tr th.actions {
     @apply text-right pr-3;
 }
-
+table tbody tr:nth-child(even){
+    background-color: ghostwhite;
+    
+}
 table tbody tr {
     @apply hover:bg-blue-100;
 }
+
+
 
 td {
     padding: 3px;
@@ -33,6 +38,12 @@ tr {
 
 td.actions {
     @apply w-48 flex-grow-0 text-right pr-3;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .tooltip {
@@ -72,4 +83,12 @@ td.actions {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

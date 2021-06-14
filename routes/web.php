@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('fish/{school}/{fish}', 'App\Http\Controllers\FishController@destroy')->name('fish.destroy');
     Route::put('fish/{school}/{fish}', 'App\Http\Controllers\FishController@update')->name('fish.update');
     Route::get('fish/{school}', 'App\Http\Controllers\FishController@index')->name('fish.index');
+    Route::get('fish/{school}/shared', 'App\Http\Controllers\FishController@indexShared')->name('fish.indexShared');
     Route::get('fish/{school}/create', 'App\Http\Controllers\FishController@create')->name('fish.create');
     Route::get('fish/{school}/{fish}/edit', 'App\Http\Controllers\FishController@edit')->name('fish.edit');
     Route::post('fish/{school}', 'App\Http\Controllers\FishController@store')->name('fish.store');

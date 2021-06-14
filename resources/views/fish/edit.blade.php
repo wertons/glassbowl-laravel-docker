@@ -18,7 +18,7 @@
         <?php echo Form::label('url', __('URL'), ['class' => '']) ?>
         <?php echo Form::text('url', $fish->url, ['class' => '']) ?>
 
-        <div class="flex flex-row space-x-1">
+        <div class="flex flex-row space-x-1 mt-4">
             <x-form.button href="{{route('fish.index', ['school' => $school->id]) }}" color="red" icon="arrow-left">{{__('Cancel')}}</x-form.button>
             <x-form.button color="green" icon="save" type="submit">{{__('Save')}}</x-form.button>
         </div>

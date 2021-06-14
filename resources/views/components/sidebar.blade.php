@@ -1,6 +1,6 @@
 <ul class="block sm:w-full mb-2">
     <li class="flex flex-col">
-        <div class="block w-full px-1 text-sm font-medium leading-5 pl-5 py-2">
+        <div class="block w-full px-1 text-sm font-medium leading-5 pl-5 py-2 unselectable">
             <i class=" fa fa-layer-group mr-2"></i> {{ __('Schools') }}
         </div>
         <x-nav-link class="pl-9 flex flex-row items-center" :href="route('schools.index')" :active="request()->routeIs('schools.index')">
@@ -18,7 +18,7 @@
             <i class="fas fa-chevron-right ml-auto mr-2"></i>
         </x-nav-link>
 
-        <div class="block w-full px-1 text-sm font-medium leading-5 pl-5 py-2">
+        <div class="block w-full px-1 text-sm font-medium leading-5 pl-5 py-2 unselectable">
             <i class=" fa fa-users mr-2"></i> {{ __('Teams') }}
         </div>
 
