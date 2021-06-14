@@ -38,7 +38,7 @@
                         @endforeach
                     </td>
                     <td class="actions">
-                        <x-form.action-button color="green" class="fa-columns" :href="route('schools.teamIndex', ['team'=>$team])" />
+                        <x-form.action-button color="green" class="fa-layer-group" :href="route('schools.teamIndex', ['team'=>$team])" />
                         <x-form.action-button color="blue" class="fa-users" :href="route('teams.members', ['team'=>$team])" />
                         <x-form.action-button color="green" class="fa-edit" :href="route('teams.edit', ['team'=>$team])" />
                         <x-form.action-button color="red" type="form" class="fa-trash" :href="route('teams.destroy', ['team'=>$team])" />
