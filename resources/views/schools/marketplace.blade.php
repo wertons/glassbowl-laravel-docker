@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-header title="Marketplace">
+        <x-header title="Aquarium">
         </x-header>
     </x-slot>
     <div class="overflow-x-auto">
