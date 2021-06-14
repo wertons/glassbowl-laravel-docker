@@ -24,6 +24,7 @@
 </template>
 <script>
     export default {
+        name: 'FormButton',
         data() {
             return {
                 color: this.color ?? 'blue',

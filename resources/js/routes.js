@@ -16,7 +16,7 @@ export const routes = new VueRouter({
                 path: '/schools',
                 alias:'/schools/:team',
                 component: Vue.component('SchoolIndex', () => import('./components/schools/SchoolIndex.vue')),
-                name: 'school.index',
+                name: 'SchoolIndex',
             },
             {
                 path: '/schools/create',

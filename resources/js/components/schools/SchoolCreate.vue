@@ -42,9 +42,10 @@
     import Header from './../components/Header.vue';
     import FormButton from './../components/form/FormButton.vue';
     export default {
+        name:'SchoolCreate',
         data() {
             return {
-                team: $route.params.team ?? false,
+                team: this.$route.params.team ?? false,
                 title,
                 description,
 

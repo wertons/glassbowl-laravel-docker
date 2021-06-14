@@ -14,10 +14,10 @@
                                 <button @click="openDrawer=toggleDrawer(openDrawer)"
                                     class="inline-flex items-center justify-center p-2 rounded-md text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 focus:text-secondary-500 transition duration-150 ease-in-out">
                                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
+                                        <path :class="{'hidden': 'open', 'inline-flex': ! 'open' }" class="inline-flex"
                                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M4 6h16M4 12h16M4 18h16" />
-                                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                                        <path :class="{'hidden': ! 'open', 'inline-flex': 'open' }" class="hidden"
                                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M6 18L18 6M6 6l12 12" />
                                     </svg>
@@ -25,7 +25,7 @@
                             </div>
                             <!-- Page Heading -->
                             <div class="mt-5 sm:mt-2 w-full sm:mr-0 mr-8 flex flex-row">
-                                {{ $header }}
+                                <Header></Header>
                             </div>
                         </header>
 
@@ -53,14 +53,10 @@
 
                         <slot name="content">
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <a id="logout-button" class="ml-3" href="{{route('logout')}}" onclick="event.preventDefault();
-                            this.closest('form').submit();">
-                                    {{ __('Logout') }}
+                     
+                                <a id="logout-button" class="ml-3" @click="logOut()">
+                                    Logout
                                 </a>
-                            </form>
                         </slot>
                     </Dropdown>
                 </div>
@@ -70,7 +66,7 @@
         </div>
 
         <!-- Responsive Navigation Menu -->
-        <div :class="{'block': open, 'hidden': !open}" class="sm:hidden">
+        <div :class="{'block': 'open', 'hidden': !'open'}" class="sm:hidden">
             <!-- Navigation Menu -->
             <Sidebar :role="null" />
 
@@ -110,14 +106,25 @@
     import Button from './../components/Button.vue';
     import Dropdown from './../components/Dropdown.vue';
     import Sidebar from './../components/Sidebar.vue';
+
+      
     import axios from 'axios';
+    import Header from '../components/Header.vue';
 
     export default {
+        name: 'Navigation',
+        components:{
+            NavLink,
+            Button,
+            Dropdown,
+            Sidebar,
+            Header
+        },
         data() {
             return {
                 csrf_token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                uname,
-                email
+                uname:"",
+                email:""
             }
         },
         created() {

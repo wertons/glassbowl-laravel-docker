@@ -53,6 +53,7 @@
 import Header from './../components/Header.vue';
 import FormActionButton from './../components/form/FormActionButton.vue';
 export default {
+    name: 'SchoolIndex',
     data(){
         return{
             schools: this.schools,
@@ -60,6 +61,7 @@ export default {
         }
     },
     created(){
+        
         if(!team){
                  axios
                 .post(`api/schools`,{

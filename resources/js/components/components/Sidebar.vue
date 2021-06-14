@@ -36,6 +36,10 @@
 <script>
     import NavLink from './NavLink.vue';
     export default {
+        name: 'Sidebar',
+        components:{
+            NavLink
+        },
         data() {
             return {
 
