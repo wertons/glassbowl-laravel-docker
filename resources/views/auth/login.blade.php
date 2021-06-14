@@ -35,16 +35,24 @@
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
+
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 float-right" href="{{ route('register') }}">
+                    {{ __('Register') }}
+                </a>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login.google') }}">
-                    {{ __('Login Google') }}
-                </a>
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login.github') }}">
-                    {{ __('Login Github') }}
-                </a>
+                <x-button class="ml-3">
+                    <a class="" href="{{ route('login.google') }}">
+                        {{ __('Login Google') }}
+                    </a>
+                </x-button>
+                <x-button class="ml-3">
+                    <a class="" href="{{ route('login.github') }}">
+                        {{ __('Login Github') }}
+                    </a>
+                </x-button>
                 @endif
 
                 <x-button class="ml-3">
