@@ -27,6 +27,23 @@ class FishController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexShared($schoolId)
+    {
+        
+        $fishs = Fish::where('school_id', $schoolId)->paginate(config('crud.paginate'));
+
+        $school = School::findOrFail($schoolId);
+
+        return view('fish.indexShared', [
+            'fishs' => $fishs,
+            'school' => $school
+        ]);
+    }
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
