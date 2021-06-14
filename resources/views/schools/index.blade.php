@@ -21,15 +21,26 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($schools as $i=>$school)
                 <tr>
                     <td>
+                        <input type="text" class="marketplace-searcher" name="title"> </td>
+                    <td>
+                        <input type="text" class="marketplace-searcher" name="description"> </td>
+                    <td>
+                        <input type="text" class="marketplace-searcher" name="created"> </td>
+                    <td>
+                    <td class="actions">
+                    </td>
+                </tr>
+                @foreach ($schools as $i=>$school)
+                <tr>
+                    <td class="searchable-title">
                         {{$school->title}}
                     </td>
-                    <td>
+                    <td class="searchable-description">
                         {{$school->description}}
                     </td>
-                    <td>
+                    <td class="searchable-created">
                         {{$school->created_at}}
                     </td>
                     <td class="actions">
@@ -51,4 +62,23 @@
 
         </table>
     </div>
+    @push('scripts')
+    <script>
+   document.querySelectorAll(".marketplace-searcher").forEach(input => {
+            input.addEventListener("change", (ev) => {
+            
+                let text = ev.target.value; 
+                document.querySelectorAll(".searchable-" + ev.target.name).forEach(row => {
+                    if (!row.innerHTML.includes(text.trim())) {
+                        row.parentElement.classList.add("hidden");
+                    } else{
+                        row.parentElement.classList.remove("hidden");
+
+                    }
+                });
+            });
+        });
+
+    </script>
+    @endpush
 </x-app-layout>
