@@ -1,4 +1,4 @@
-<h2 class="font-bold text-xl w-auto flex items-center ">
+<h2 class="font-bold text-xl w-auto flex items-center unselectable">
     {{ __($title) }}
 
 </h2>

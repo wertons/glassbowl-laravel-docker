@@ -6,13 +6,13 @@
     </x-slot>
     <div class="overflow-x-auto">
         <table>
-            <thead>
+            <thead class="table-fixed">
                 <tr>
-                    <th>{{__('Name')}}</th>
-                    <th>{{__('Description')}}</th>
-                    <th>{{__('Created')}}</th>
-                    <th>{{__('Owner')}}</th>
-                    <th class="actions">{{__('Actions')}}</th>
+                    <th class="w-3/8">{{__('Name')}}</th>
+                    <th class="w-2/8">{{__('Description')}}</th>
+                    <th class="w-1/8">{{__('Created')}}</th>
+                    <th  class="w-1/8">{{__('Owner')}}</th>
+                    <th class="actions w-1/4">{{__('Actions')}}</th>
                 </tr>
             </thead>
             <tbody>

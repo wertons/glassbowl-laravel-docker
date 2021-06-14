@@ -6,7 +6,7 @@
                 <!-- Navigation Links -->
                 <div class="sm:flex items-center w-full">
                     <header class="flex w-full">
-                        <!-- hamubrger conventional -->
+                        <!-- Hamburguer conventional -->
                         <div class="hidden mr-2 mt-1.5 sm:block">
                             <button @click="openDrawer=toggleDrawer(openDrawer)" class="inline-flex items-center justify-center p-2 rounded-md text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 focus:text-secondary-500 transition duration-150 ease-in-out">
                                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
