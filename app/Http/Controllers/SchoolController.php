@@ -20,7 +20,7 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        $schools = School::where('user_id', auth()->user()->id);
+        $schools = School::where('user_id', auth()->user()->id)->get();
 
         return view('schools.index', [
             'schools' => $schools,
