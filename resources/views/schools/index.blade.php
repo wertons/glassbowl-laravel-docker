@@ -23,24 +23,24 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="title"> </td>
+                        <input type="text" class="marketplace-searcher" name="title"  placeholder="Filter by title..."> </td>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="description"> </td>
+                        <input type="text" class="marketplace-searcher" name="description"  placeholder="Filter by description..."> </td>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="created"> </td>
+                        <input type="text" class="marketplace-searcher" name="created"  placeholder="Filter by date..."> </td>
                     <td>
                     <td class="actions">
                     </td>
                 </tr>
                 @foreach ($schools as $i=>$school)
                 <tr>
-                    <td class="searchable-title">
+                    <td class="searchable-title searchable">
                         {{$school->title}}
                     </td>
-                    <td class="searchable-description">
+                    <td class="searchable-description searchable">
                         {{$school->description}}
                     </td>
-                    <td class="searchable-created">
+                    <td class="searchable-created searchable">
                         {{$school->created_at}}
                     </td>
                     <td class="actions">

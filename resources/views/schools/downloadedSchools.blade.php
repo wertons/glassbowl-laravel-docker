@@ -17,13 +17,13 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="title"> </td>
+                        <input type="text" class="marketplace-searcher" name="title"  placeholder="Filter by title..."> </td>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="description"> </td>
+                        <input type="text" class="marketplace-searcher" name="description"  placeholder="Filter by description..."> </td>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="created"> </td>
+                        <input type="text" class="marketplace-searcher" name="created"  placeholder="Filter by date..."> </td>
                     <td>
-                        <input type="text" class="marketplace-searcher" name="owner"> </td>
+                        <input type="text" class="marketplace-searcher" name="email"  placeholder="Filter by owner..."> </td>
                     <td class="actions">
                     </td>
                 </tr>
