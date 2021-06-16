@@ -21,33 +21,23 @@ class SchoolController extends Controller
      */
     public function index()
     {
-
-        return Inertia::render('test',[
-            'test_url'=> route('schools.create',[
-                'team' => null
-            ])
-        ]);
-        /*
         $schools = School::where('user_id', auth()->user()->id)->get();
 
-        return view('schools.index', [
+        return Inertia::render('SchoolsIndex', [
             'schools' => $schools,
             'team' => null
-        ]);*/
+        ]);
     }
 
     public function teamIndex(TeamRequest $request, $id)
     {
-        return Inertia::render('link',[
-        ]);
-        /*
         $team = Team::findOrFail($id);
         $schools = School::where('team_id', $id)->paginate(config('crud.paginate'));
 
-        return view('schools.index', [
+        return Inertia::render('SchoolsIndex', [
             'schools' => $schools,
             'team' => $team
-        ]);*/
+        ]);
     }
 
     /**
@@ -57,19 +47,16 @@ class SchoolController extends Controller
      */
     public function create()
     {
-        return Inertia::render('link',[
-        ]);
-        /*
-        return view('schools.create', [
+        return Inertia::render('SchoolsCreate', [
             'team' => null
-        ]);*/
+        ]);
     }
 
     public function teamCreate($id)
     {
         $team = Team::findOrFail($id);
 
-        return view('schools.create', [
+        return Inertia::render('SchoolsCreate', [
             'team' => $team
         ]);
     }
@@ -129,7 +116,8 @@ class SchoolController extends Controller
     public function edit(SchoolManagementRequest $request, $id)
     {
         $school = School::findOrFail($id);
-        return view('schools.edit', [
+
+        return Inertia::render('SchoolsEdit', [
             'school' => $school,
         ]);
     }
@@ -209,7 +197,7 @@ class SchoolController extends Controller
     {
         $schools = School::where('shared', true)->where('user_id', '!=', auth()->user()->id)->get();
 
-        return view('schools.marketplace', [
+        return Inertia::render('SchoolsMarketplace', [
             'schools' => $schools,
         ]);
     }
@@ -248,7 +236,8 @@ class SchoolController extends Controller
         foreach ($user->sharedSchools as $school) {
             $schools->add($school);
         }
-        return view('schools.downloadedSchools', [
+
+        return Inertia::render('SchoolsDownloadedSchools', [
             'schools' => $schools,
         ]);
     }

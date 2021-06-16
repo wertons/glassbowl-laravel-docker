@@ -7,6 +7,7 @@ use App\Models\Fish;
 use App\Models\School;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class FishController extends Controller
 {
@@ -21,7 +22,7 @@ class FishController extends Controller
 
         $school = School::findOrFail($schoolId);
 
-        return view('fish.index', [
+        return Inertia::render('FishIndex', [
             'fishs' => $fishs,
             'school' => $school
         ]);
@@ -32,14 +33,13 @@ class FishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexShared(SchoolCheckPublicRequest $request,$schoolId)
+    public function indexShared(SchoolCheckPublicRequest $request, $schoolId)
     {
-        
         $fishs = Fish::where('school_id', $schoolId)->paginate(config('crud.paginate'));
 
         $school = School::findOrFail($schoolId);
 
-        return view('fish.indexShared', [
+        return Inertia::render('FishIndexShared', [
             'fishs' => $fishs,
             'school' => $school
         ]);
@@ -53,7 +53,7 @@ class FishController extends Controller
     {
         $school = School::findOrFail($schoolId);
 
-        return view('fish.create', [
+        return Inertia::render('FishCreate', [
             'school' => $school
         ]);
     }
@@ -105,7 +105,7 @@ class FishController extends Controller
         $school = School::findOrFail($schoolId);
         $fish = Fish::findOrFail($fishId);
 
-        return view('fish.edit', [
+        return Inertia::render('FishEdit', [
             'school' => $school,
             'fish' => $fish
         ]);

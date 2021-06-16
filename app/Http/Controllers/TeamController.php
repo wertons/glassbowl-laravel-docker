@@ -7,6 +7,7 @@ use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TeamController extends Controller
 {
@@ -21,8 +22,8 @@ class TeamController extends Controller
             return $query->where('id', auth()->user()->id);
         })->get();
 
-        return view('teams.index', [
-            'teams' => $teams,
+        return Inertia::render('TeamsIndex', [
+            'teams' => $teams
         ]);
     }
 
@@ -33,7 +34,7 @@ class TeamController extends Controller
      */
     public function create(TeamRequest $request)
     {
-        return view('teams.create');
+        return Inertia::render('TeamsCreate');
     }
 
     /**
@@ -77,8 +78,9 @@ class TeamController extends Controller
     public function edit(TeamRequest $request, $id)
     {
         $team = Team::findOrFail($id);
-        return view('teams.edit', [
-            'team' => $team,
+
+        return Inertia::render('TeamsEdit', [
+            'team' => $team
         ]);
     }
 
@@ -119,8 +121,8 @@ class TeamController extends Controller
     {
         $team = Team::findOrFail($id);
 
-        return view('teams.members', [
-            'team' => $team,
+        return Inertia::render('TeamsMembers', [
+            'team' => $team
         ]);
     }
 
@@ -128,8 +130,8 @@ class TeamController extends Controller
     {
         $team = Team::findOrFail($id);
 
-        return view('teams.invite', [
-            'team' => $team,
+        return Inertia::render('TeamsInvite', [
+            'team' => $team
         ]);
     }
 
@@ -141,8 +143,8 @@ class TeamController extends Controller
 
         $team->users()->attach($user);
 
-        return view('teams.members', [
-            'team' => $team,
+        return Inertia::render('TeamsMembers', [
+            'team' => $team
         ]);
     }
 
@@ -152,8 +154,8 @@ class TeamController extends Controller
             return $query->where('id', auth()->user()->id);
         })->get();
 
-        return view('teams.invitations', [
-            'teams' => $teams,
+        return Inertia::render('TeamsInvitations', [
+            'teams' => $teams
         ]);
     }
 
