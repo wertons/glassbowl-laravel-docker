@@ -10,6 +10,7 @@ use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class SchoolController extends Controller
 {
@@ -20,23 +21,33 @@ class SchoolController extends Controller
      */
     public function index()
     {
+
+        return Inertia::render('test',[
+            'test_url'=> route('schools.create',[
+                'team' => null
+            ])
+        ]);
+        /*
         $schools = School::where('user_id', auth()->user()->id)->get();
 
         return view('schools.index', [
             'schools' => $schools,
             'team' => null
-        ]);
+        ]);*/
     }
 
     public function teamIndex(TeamRequest $request, $id)
     {
+        return Inertia::render('link',[
+        ]);
+        /*
         $team = Team::findOrFail($id);
         $schools = School::where('team_id', $id)->paginate(config('crud.paginate'));
 
         return view('schools.index', [
             'schools' => $schools,
             'team' => $team
-        ]);
+        ]);*/
     }
 
     /**
@@ -46,9 +57,12 @@ class SchoolController extends Controller
      */
     public function create()
     {
+        return Inertia::render('link',[
+        ]);
+        /*
         return view('schools.create', [
             'team' => null
-        ]);
+        ]);*/
     }
 
     public function teamCreate($id)
