@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('alpinejs')
 import Cookies from 'js-cookie';
+import Vue from 'vue'
 
 window.toggleDrawer = (openDrawer) => {
     const newState = !openDrawer;
@@ -10,7 +11,6 @@ window.toggleDrawer = (openDrawer) => {
 
 window.Cookies = Cookies;
 
-import Vue from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue'
 
 createInertiaApp({

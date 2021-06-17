@@ -55,6 +55,7 @@
             </div>
             <div class="w-full flex flex-col bg-gray-50 flex-grow">
                 @include('layouts.navigation')
+                
                 <!-- Page Content -->
                 <div class="w-full flex flex-col shadow flex-grow">
                     <main class=>
