@@ -3,7 +3,7 @@
         <ComponentsAuthCard>
             <template v-slot:logo>
                 <a href="/">
-                    <ComponentsApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
+                    <ComponentsApplicationLogo  />
                 </a>
             </template>
 

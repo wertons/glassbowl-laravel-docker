@@ -2,9 +2,8 @@
     <LayoutsApp>
         <template v-slot:header>
             <ComponentsHeader title="My Schools">
-                <x-form.action-button class="fa-plus" color="green" :href="'/schools/create'"  v-if="team == null"/>
-                <x-form.action-button class="fa-plus" color="green"
-                    :href="'schools/'+team.id+'/create'"  v-else/>
+                <ComponentsFormActionButton class="fa-plus" color="green" :href="'/schools/create'" v-if="team == null" />
+                <ComponentsFormActionButton class="fa-plus" color="green" :href="'schools/'+team.id+'/create'" v-else />
             </ComponentsHeader>
         </template>
         <div class="overflow-x-auto">
@@ -36,30 +35,28 @@
                     </tr>
                     <tr v-for="school in schools" :key="school">
                         <td class="searchable-title searchable">
-                            {{$school->title}}
+                            {{school.title}}
                         </td>
                         <td class="searchable-description searchable">
-                            {{$school->description}}
+                            {{school.description}}
                         </td>
                         <td class="searchable-created searchable">
-                            {{$school->created_at}}
+                            {{school.created_at}}
                         </td>
                         <td class="actions">
-                            <x-form.action-button tooltip="Fishes" color="yellow" class="fa-fish"
-                                :href="route('fish.index', ['school'=>$school])" />
-                            @if($school->user_id != null)
-                            @if($school->shared == false)
-                            <x-form.action-button tooltip="Share" color="green" type="post" class="fa-share"
-                                :href="route('schools.share', ['school'=>$school])" />
-                            @else
-                            <x-form.action-button tooltip="Unshare" color="red" type="post" class="fa-share"
-                                :href="route('schools.unshare', ['school'=>$school])" />
-                            @endif
-                            @endif
-                            <x-form.action-button tooltip="Edit" color="green" class="fa-edit"
-                                :href="route('schools.edit', ['school'=>$school])" />
-                            <x-form.action-button tooltip="Delete" color="red" type="form" class="fa-trash"
-                                :href="route('schools.destroy', ['school'=>$school])" />
+                            <ComponentsFormActionButton tooltip="Fishes" color="yellow" class="fa-fish"
+                                :href="'fish/'+school.id" />
+
+                            <ComponentsFormActionButton tooltip="Share" color="green" type="post" class="fa-share"
+                                :href="'/schools/'+school.id+'/share'"
+                                v-if="school.user_id != null && school.shared == false" />
+                            <ComponentsFormActionButton tooltip="Unshare" color="red" type="post" class="fa-share"
+                                :href="'/schools/'+school.id+'/unshare'" v-else />
+
+                            <ComponentsFormActionButton tooltip="Edit" color="green" class="fa-edit"
+                                :href="'/schools/'+school.id+'/edit'" />
+                            <ComponentsFormActionButton tooltip="Delete" color="red" type="form" class="fa-trash"
+                                :href="'/schools/'+school.id" />
                         </td>
                         <td></td>
                     </tr>
@@ -73,13 +70,15 @@
 <script>
     import LayoutsApp from './LayoutsApp.vue';
     import ComponentsHeader from './ComponentsHeader.vue';
+    import ComponentsFormActionButton from './ComponentsFormActionButton.vue';
 
     export default {
-        components:{
-           LayoutsApp,
-           ComponentsHeader
+        components: {
+            LayoutsApp,
+            ComponentsHeader,
+            ComponentsFormActionButton
         },
-        props:[
+        props: [
             'schools',
             'team'
         ],
