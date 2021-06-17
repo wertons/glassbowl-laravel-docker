@@ -5127,23 +5127,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['color', 'icon', 'type', 'tooltip'],
+  props: ['color', 'icon', 'type', 'tooltip', 'href'],
   data: function data() {
-    return {
-      iconClass: false
-    };
+    return {};
   },
-  created: function created() {
-    var _ref, _this$icon, _this$type, _this$tooltip;
-
-    (_ref = this.color == this.color) !== null && _ref !== void 0 ? _ref : 'gray';
-    this.iconClass = " fa fa-" + ((_this$icon = this.icon) !== null && _this$icon !== void 0 ? _this$icon : 'home');
-    this.type = (_this$type = this.type) !== null && _this$type !== void 0 ? _this$type : 'link';
-    this.tooltip = (_this$tooltip = this.tooltip) !== null && _this$tooltip !== void 0 ? _this$tooltip : 'Blank';
-  },
+  created: function created() {},
   methods: {
     submitForm: function submitForm() {
       this.$inertia["delete"](this.href, {
@@ -5398,8 +5387,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ComponentsContentContainer_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ComponentsContentContainer.vue */ "./resources/js/Pages/ComponentsContentContainer.vue");
 /* harmony import */ var _ComponentsSidebar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ComponentsSidebar.vue */ "./resources/js/Pages/ComponentsSidebar.vue");
 /* harmony import */ var _ComponentsButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ComponentsButton.vue */ "./resources/js/Pages/ComponentsButton.vue");
-//
-//
 //
 //
 //
@@ -30306,24 +30293,26 @@ var render = function() {
           }
         },
         [
-          _c("span", [
-            _c(
-              "a",
-              {
-                class:
-                  "tooltip fa rounded-full p-2 my-1 bg-" +
-                  { color: _vm.color } +
-                  "-500 text-white transition-colors duration-200 transform hover:bg-" +
-                  { color: _vm.color } +
-                  "-800"
-              },
-              [
-                _c("span", { staticClass: "tooltiptext" }, [
-                  _vm._v(_vm._s(_vm.tooltip))
-                ])
-              ]
-            )
-          ])
+          _c(
+            "a",
+            {
+              class:
+                "tooltip fa rounded-full p-2 my-1 bg-" +
+                _vm.color +
+                "-500 text-white transition-colors duration-200 transform hover:bg-" +
+                _vm.color +
+                "-800  " +
+                _vm.icon,
+              attrs: { color: _vm.color }
+            },
+            [
+              _c("i", { class: "fas " + _vm.icon }),
+              _vm._v(" "),
+              _c("span", { staticClass: "tooltiptext" }, [
+                _vm._v(_vm._s(_vm.tooltip))
+              ])
+            ]
+          )
         ]
       )
     : _vm.type == "post"
@@ -30339,44 +30328,47 @@ var render = function() {
           }
         },
         [
-          _c("span", [
-            _c(
-              "a",
-              {
-                class:
-                  "tooltip fa rounded-full p-2 my-1 bg-" +
-                  { color: _vm.color } +
-                  "-500 text-white transition-colors duration-200 transform hover:bg-" +
-                  { color: _vm.color } +
-                  "-800"
-              },
-              [
-                _c("span", { staticClass: "tooltiptext" }, [
-                  _vm._v(_vm._s(_vm.tooltip))
-                ])
-              ]
-            )
+          _c(
+            "a",
+            {
+              class:
+                "tooltip fa rounded-full p-2 my-1 bg-" +
+                _vm.color +
+                "-500 text-white transition-colors duration-200 transform hover:bg-" +
+                _vm.color +
+                "-800  " +
+                _vm.icon,
+              attrs: { color: _vm.color }
+            },
+            [
+              _c("i", { class: "fas " + _vm.icon }),
+              _vm._v(" "),
+              _c("span", { staticClass: "tooltiptext" }, [
+                _vm._v(_vm._s(_vm.tooltip))
+              ])
+            ]
+          )
+        ]
+      )
+    : _c(
+        "inertia-link",
+        {
+          class:
+            "tooltip fa rounded-full p-2 my-1 bg-" +
+            _vm.color +
+            "-500 text-white transition-colors duration-200 transform hover:bg-" +
+            _vm.color +
+            "-800",
+          attrs: { color: _vm.color, href: _vm.href }
+        },
+        [
+          _c("i", { class: "fas " + _vm.icon }),
+          _vm._v(" "),
+          _c("span", { staticClass: "tooltiptext" }, [
+            _vm._v(_vm._s(_vm.tooltip))
           ])
         ]
       )
-    : _c("span", [
-        _c(
-          "a",
-          {
-            class:
-              "tooltip fa rounded-full p-2 my-1 bg-" +
-              { color: _vm.color } +
-              "-500 text-white transition-colors duration-200 transform hover:bg-" +
-              { color: _vm.color } +
-              "-800"
-          },
-          [
-            _c("span", { staticClass: "tooltiptext" }, [
-              _vm._v(_vm._s(_vm.tooltip))
-            ])
-          ]
-        )
-      ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -30468,11 +30460,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "w-full" }, [
     _c(
       "h2",
       {
-        staticClass: "font-bold text-xl w-auto flex items-center unselectable"
+        staticClass:
+          "float-left font-bold text-xl w-auto flex items-center unselectable"
       },
       [_vm._v("\n        " + _vm._s(_vm.title) + "\n\n    ")]
     ),
@@ -30830,9 +30823,7 @@ var render = function() {
                               attrs: {
                                 method: "post",
                                 id: "logout-button",
-                                href: "/logout",
-                                onclick:
-                                  "event.preventDefault();\n                        this.closest('form').submit();"
+                                href: "/logout"
                               }
                             },
                             [
@@ -30916,12 +30907,7 @@ var render = function() {
                                 _c(
                                   "inertia-link",
                                   {
-                                    attrs: {
-                                      method: "post",
-                                      href: "/logout",
-                                      onclick:
-                                        "event.preventDefault();\n                                    this.closest('form').submit();"
-                                    }
+                                    attrs: { method: "post", href: "/logout" }
                                   },
                                   [
                                     _vm._v(
@@ -31028,12 +31014,15 @@ var render = function() {
                 [
                   _vm.team == null
                     ? _c("ComponentsFormActionButton", {
-                        staticClass: "fa-plus",
-                        attrs: { color: "green", href: "/schools/create" }
+                        attrs: {
+                          icon: "fa-plus",
+                          color: "green",
+                          href: "/schools/create"
+                        }
                       })
                     : _c("ComponentsFormActionButton", {
-                        staticClass: "fa-plus",
                         attrs: {
+                          icon: "fa-plus",
                           color: "green",
                           href: "schools/" + _vm.team.id + "/create"
                         }

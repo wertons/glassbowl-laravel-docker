@@ -46,8 +46,7 @@
                                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                                     <div class="w-auto">{{ user.name }}</div>
 
-                                    <inertia-link method="post" id="logout-button" class="ml-3" href="/logout" onclick="event.preventDefault();
-                            this.closest('form').submit();">
+                                    <inertia-link method="post" id="logout-button" class="ml-3" href="/logout" >
                                         Logout
                                     </inertia-link>
                                 </div>
@@ -83,8 +82,7 @@
 
 
                                     <ComponentsButton class="bg-red-50 text-red-800">
-                                        <inertia-link method="post" href="/logout" onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                                        <inertia-link method="post" href="/logout" >
                                             Logout
                                         </inertia-link>
                                     </ComponentsButton>

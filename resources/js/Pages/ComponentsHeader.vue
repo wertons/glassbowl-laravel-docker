@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2 class="font-bold text-xl w-auto flex items-center unselectable">
+    <div class="w-full">
+        <h2 class="float-left font-bold text-xl w-auto flex items-center unselectable">
             {{title}}
 
         </h2>
