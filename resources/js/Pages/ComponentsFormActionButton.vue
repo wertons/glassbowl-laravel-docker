@@ -1,22 +1,22 @@
 <template>
-    <form class="inline" @submit.prevent="confirm('Are you sure?') && submitForm" v-if="type == 'form'">
+    <form class="inline" @submit.prevent="confirmDelete('Are you sure?') " v-if="type == 'form'">
 
-        <a :color="color"
+        <button :color="color" type="submit"
             :class="`tooltip fa rounded-full p-2 my-1 bg-${color}-500 text-white transition-colors duration-200 transform hover:bg-${color}-800 `">
             <i :class="'fas '+icon"></i>
 
             <span class="tooltiptext">{{tooltip}}</span>
-        </a>
+        </button>
 
     </form>
     <form class="inline" @submit.prevent="submit" v-else-if="type == 'post'">
 
-        <a :color="color"
+        <button :color="color" type="submit"
             :class="`tooltip fa rounded-full p-2 my-1 bg-${color}-500 text-white transition-colors duration-200 transform hover:bg-${color}-800 `">
             <i :class="'fas '+icon"></i>
 
             <span class="tooltiptext">{{tooltip}}</span>
-        </a>
+        </button>
     </form>
 
 
@@ -40,7 +40,19 @@
         },
         created: function () {},
         methods: {
-        
+
+            submit() {
+                this.$inertia.post(this.href, {
+    
+                });
+            },
+            confirmDelete(data) {
+                if (confirm(data)) {
+                    this.$inertia.delete(this.href, {
+    
+                    });
+                }
+            }
         }
     }
 

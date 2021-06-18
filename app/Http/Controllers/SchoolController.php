@@ -197,6 +197,9 @@ class SchoolController extends Controller
     {
         $schools = School::where('shared', true)->where('user_id', '!=', auth()->user()->id)->get();
 
+        foreach ($schools as $school){
+            $school['userMail'] = $school->user->email;
+        }
         return Inertia::render('SchoolsMarketplace', [
             'schools' => $schools,
         ]);
@@ -234,6 +237,7 @@ class SchoolController extends Controller
 
         $schools  = (new School)->newCollection();
         foreach ($user->sharedSchools as $school) {
+            $school['userMail'] = $school->user->email;
             $schools->add($school);
         }
 

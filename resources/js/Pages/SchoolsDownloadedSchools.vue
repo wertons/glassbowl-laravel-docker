@@ -1,21 +1,18 @@
 <template>
     <LayoutsApp>
         <template v-slot:header>
-            <ComponentsHeader title="My Schools">
-                <ComponentsFormActionButton :icon="'fa-plus'" color="green" :href="'/schools/create'" v-if="team == null" />
-                <ComponentsFormActionButton :icon="'fa-plus'" color="green" :href="'schools/'+team.id+'/create'" v-else />
+            <ComponentsHeader title="My downloaded Schools">
             </ComponentsHeader>
         </template>
         <div class="overflow-x-auto">
             <table>
-                <thead class="table-fixed">
+                <thead>
                     <tr>
-                        <th class="w-3/8">Title</th>
-                        <th class="w-2/8">Description</th>
-                        <th class="w-1/8">Created</th>
-                        <th class="w-1/4 actions">Actions</th>
-                        <th class="w-1/8"></th>
-
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Created</th>
+                        <th>Owner</th>
+                        <th class="actions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +27,8 @@
                             <input type="text" class="marketplace-searcher" name="created"
                                 placeholder="Filter by date..."> </td>
                         <td>
+                            <input type="text" class="marketplace-searcher" name="email"
+                                placeholder="Filter by owner..."> </td>
                         <td class="actions">
                         </td>
                     </tr>
@@ -43,20 +42,18 @@
                         <td class="searchable-created searchable">
                             {{school.created_at}}
                         </td>
-                        <td class="actions">
-                            <ComponentsFormActionButton tooltip="Fishes" color="yellow" 
-                                :href="'fish/'+school.id" :icon="'fa-fish'"/>
-                            <ComponentsFormActionButton tooltip="Share" color="green" :type="'post'" ç
-                                :href="'/schools/'+school.id+'/share'" :icon="'fa-share'"
-                                v-if="school.user_id != null && school.shared == false" />
-                            <ComponentsFormActionButton tooltip="Unshare" color="red" :type="'post'" :icon="'fa-share'"
-                                :href="'/schools/'+school.id+'/unshare'" v-else />
-                            <ComponentsFormActionButton tooltip="Edit" color="green" :icon="'fa-edit'"
-                                :href="'/schools/'+school.id+'/edit'" />
-                            <ComponentsFormActionButton tooltip="Delete" color="red" :type="'form'" :icon="'fa-trash'"
-                                :href="'/schools/'+school.id" />
+                        <td class="searchable-email searchable">
+                            {{school.userMail}}
                         </td>
-                        <td></td>
+                        <td class="actions">
+                   
+                            <ComponentsFormActionButton tooltip="Fishes" color="yellow" :href="`/fish/${school.id}/shared`"
+                                :icon="'fa-fish'" />
+
+                        
+                            <ComponentsFormActionButton tooltip="Remove" color="red" :type="'post'"
+                                :icon="'fa-download'" :href="`/schools/${school.id}/cancelDownloadSchool`" />
+                        </td>
                     </tr>
                 </tbody>
 
@@ -80,7 +77,7 @@
             'schools',
             'team'
         ],
-        updated : function () {
+        updated: function () {
             document.querySelectorAll(".marketplace-searcher").forEach(input => {
                 input.addEventListener("change", (ev) => {
 

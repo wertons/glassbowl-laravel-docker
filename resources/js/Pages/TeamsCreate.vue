@@ -1,25 +1,24 @@
 <template>
     <LayoutsApp>
         <template v-slot:header>
-            <ComponentsHeader title="Create new Fish">
+            <ComponentsHeader title="Create new Team">
             </ComponentsHeader>
         </template>
 
+
+
         <div class="flex flex-col">
-            <label for="title">Title</label>
-            <input name="title" type="text" id="title">
+            <label for="name">Name</label>
+            <input name="name" type="text" id="name">
             <label for="description">Description (Optional)</label>
             <input name="description" type="text" id="description">
-            <label for="url">URL</label>
-            <input name="url" type="text" id="url">
 
             <div class="flex flex-row space-x-1 mt-4">
-                <ComponentsFormButton :href="`/fish/${school.id}`" color="red" icon="arrow-left">
-                    Cancel
-                </ComponentsFormButton>
-                <ComponentsFormButton color="green" icon="save" type="submit" @clicked="submit">Save
-                </ComponentsFormButton>
-            </div>
+                <ComponentsFormButton href="/teams" color="red" icon="arrow-left">
+                        Cancel
+                    </ComponentsFormButton>
+                    <ComponentsFormButton color="green" icon="save" type="submit"  @clicked="submit">Save</ComponentsFormButton>
+               </div>
 
 
         </div>
@@ -41,21 +40,19 @@
 
         },
         props: [
-            'school'
+
         ],
         created: function () {
 
         },
         methods: {
             submit() {
-                this.$inertia.post('/fish/' + this.school.id, {
-                    title: document.querySelector("#title").value,
+                this.$inertia.post('/teams', {
+                    title: document.querySelector("#name").value,
                     description: document.querySelector("#description").value,
-                    url: document.querySelector("#url").value,
 
                 })
-            },
-
+            }
         }
     }
 

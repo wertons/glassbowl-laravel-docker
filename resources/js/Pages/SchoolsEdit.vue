@@ -1,20 +1,22 @@
 <template>
     <LayoutsApp>
         <template v-slot:header>
-            <ComponentsHeader title="Create new Fish">
+            <ComponentsHeader title="Update School">
             </ComponentsHeader>
         </template>
 
+
+
         <div class="flex flex-col">
+
             <label for="title">Title</label>
-            <input name="title" type="text" id="title">
+            <input name="title" type="text" id="title" :value="school.title">
             <label for="description">Description (Optional)</label>
-            <input name="description" type="text" id="description">
-            <label for="url">URL</label>
-            <input name="url" type="text" id="url">
+            <input name="description" type="text" id="description" :value="school.description">
+
 
             <div class="flex flex-row space-x-1 mt-4">
-                <ComponentsFormButton :href="`/fish/${school.id}`" color="red" icon="arrow-left">
+                <ComponentsFormButton :href="`/schools/${school.id}`" color="red" icon="arrow-left">
                     Cancel
                 </ComponentsFormButton>
                 <ComponentsFormButton color="green" icon="save" type="submit" @clicked="submit">Save
@@ -48,10 +50,9 @@
         },
         methods: {
             submit() {
-                this.$inertia.post('/fish/' + this.school.id, {
+                this.$inertia.put(`/schools/${this.school.id}`, {
                     title: document.querySelector("#title").value,
                     description: document.querySelector("#description").value,
-                    url: document.querySelector("#url").value,
 
                 })
             },
