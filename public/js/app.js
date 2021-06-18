@@ -6454,9 +6454,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -6483,12 +6480,92 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     });
-  },
-  computed: {
-    logged: function logged() {
-      return this.$page.props.auth.user;
-    }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _LayoutsApp_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LayoutsApp.vue */ "./resources/js/Pages/LayoutsApp.vue");
+/* harmony import */ var _ComponentsHeader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ComponentsHeader.vue */ "./resources/js/Pages/ComponentsHeader.vue");
+/* harmony import */ var _ComponentsFormActionButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ComponentsFormActionButton.vue */ "./resources/js/Pages/ComponentsFormActionButton.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {};
+  },
+  components: {
+    LayoutsApp: _LayoutsApp_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    ComponentsHeader: _ComponentsHeader_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    ComponentsFormActionButton: _ComponentsFormActionButton_vue__WEBPACK_IMPORTED_MODULE_2__.default
+  },
+  props: ['teams'],
+  updated: function updated() {}
 });
 
 /***/ }),
@@ -30132,6 +30209,45 @@ component.options.__file = "resources/js/Pages/TeamsIndex.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Pages/TeamsInvitations.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/TeamsInvitations.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TeamsInvitations.vue?vue&type=template&id=66953fe6& */ "./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6&");
+/* harmony import */ var _TeamsInvitations_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TeamsInvitations.vue?vue&type=script&lang=js& */ "./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _TeamsInvitations_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/TeamsInvitations.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/link.vue":
 /*!*************************************!*\
   !*** ./resources/js/Pages/link.vue ***!
@@ -30623,6 +30739,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeamsIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsIndex.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsInvitations_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeamsInvitations.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsInvitations_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -31130,6 +31262,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsIndex_vue_vue_type_template_id_0bdbcdb6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsIndex_vue_vue_type_template_id_0bdbcdb6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeamsIndex.vue?vue&type=template&id=0bdbcdb6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsIndex.vue?vue&type=template&id=0bdbcdb6&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeamsInvitations_vue_vue_type_template_id_66953fe6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeamsInvitations.vue?vue&type=template&id=66953fe6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6&");
 
 
 /***/ }),
@@ -33950,136 +34099,142 @@ var render = function() {
     [
       _vm._v(" "),
       _c("div", { staticClass: "overflow-x-auto" }, [
-        _c(
-          "table",
-          [
-            _c("thead", { staticClass: "table-fixed" }, [
-              _c("tr", [
-                _c("th", { staticClass: "w-3/8" }, [_vm._v("Name")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "w-2/8" }, [_vm._v("Description")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "w-1/8" }, [_vm._v("Created")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "w-1/8" }, [_vm._v("Owner")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "actions w-1/4" }, [_vm._v("Actions")])
-              ])
-            ]),
-            _vm._v(" "),
+        _c("table", [
+          _c("thead", { staticClass: "table-fixed" }, [
+            _c("tr", [
+              _c("th", { staticClass: "w-3/8" }, [_vm._v("Name")]),
+              _vm._v(" "),
+              _c("th", { staticClass: "w-2/8" }, [_vm._v("Description")]),
+              _vm._v(" "),
+              _c("th", { staticClass: "w-1/8" }, [_vm._v("Created")]),
+              _vm._v(" "),
+              _c("th", { staticClass: "w-1/8" }, [_vm._v("Owner")]),
+              _vm._v(" "),
+              _c("th", { staticClass: "actions w-1/4" }, [_vm._v("Actions")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "tbody",
             _vm._l(_vm.teams, function(team) {
-              return _c(
-                "div",
-                { key: team.id, staticClass: "w-full" },
-                _vm._l(team.users, function(user) {
-                  return _c("div", { key: user.id, staticClass: "w-full" }, [
-                    _c("tbody", [
-                      user.id == _vm.logged.id && user.pivot.joined
-                        ? _c("tr", [
-                            _c("td", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(team.name) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(team.description) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(team.created_at) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              _vm._l(team.users, function(user) {
-                                return _c("div", { key: user.id }, [
-                                  user.pivot.isOwner
-                                    ? _c("span", [
-                                        _vm._v(
-                                          "\n                                        " +
-                                            _vm._s(user.email) +
-                                            "\n                                    "
-                                        )
-                                      ])
-                                    : _vm._e()
-                                ])
-                              }),
-                              0
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              { staticClass: "actions" },
-                              [
-                                _c("ComponentsFormActionButton", {
-                                  attrs: {
-                                    tooltip: "Schools",
-                                    color: "yellow",
-                                    href: "/schools/" + team.id + "/index",
-                                    icon: "fa-layer-group"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("ComponentsFormActionButton", {
-                                  attrs: {
-                                    tooltip: "Members",
-                                    color: "blue",
-                                    type: "post",
-                                    href: "/teams/" + team.id + "/members",
-                                    icon: "fa-users"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("ComponentsFormActionButton", {
-                                  attrs: {
-                                    tooltip: "Edit",
-                                    color: "green",
-                                    type: "post",
-                                    href: "/teams/" + team.id + "/edit",
-                                    icon: "fa-edit"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("ComponentsFormActionButton", {
-                                  attrs: {
-                                    tooltip: "Delete",
-                                    color: "red",
-                                    type: "form",
-                                    href: "/teams/" + team.id,
-                                    icon: "fa-trash"
-                                  }
-                                })
-                              ],
-                              1
+              return _c("tr", { key: team.id }, [
+                _c("td", [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(team.name) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(team.description) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(team.created_at) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  _vm._l(team.users, function(user) {
+                    return _c("div", { key: user.id }, [
+                      user.pivot.isOwner
+                        ? _c("span", [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(user.email) +
+                                "\n                            "
                             )
                           ])
                         : _vm._e()
                     ])
-                  ])
-                }),
-                0
-              )
-            })
-          ],
-          2
-        )
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  { staticClass: "actions" },
+                  [
+                    _c("ComponentsFormActionButton", {
+                      attrs: {
+                        tooltip: "Schools",
+                        color: "yellow",
+                        href: "/schools/" + team.id + "/index",
+                        icon: "fa-layer-group"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("ComponentsFormActionButton", {
+                      attrs: {
+                        tooltip: "Members",
+                        color: "blue",
+                        type: "post",
+                        href: "/teams/" + team.id + "/members",
+                        icon: "fa-users"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("ComponentsFormActionButton", {
+                      attrs: {
+                        tooltip: "Edit",
+                        color: "green",
+                        type: "post",
+                        href: "/teams/" + team.id + "/edit",
+                        icon: "fa-edit"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("ComponentsFormActionButton", {
+                      attrs: {
+                        tooltip: "Delete",
+                        color: "red",
+                        type: "form",
+                        href: "/teams/" + team.id,
+                        icon: "fa-trash"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
+        ])
       ])
     ]
   )
 }
 var staticRenderFns = []
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TeamsInvitations.vue?vue&type=template&id=66953fe6& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {}
+var staticRenderFns = []
 
 
 
@@ -46370,6 +46525,8 @@ var map = {
 	"./TeamsCreate.vue": "./resources/js/Pages/TeamsCreate.vue",
 	"./TeamsIndex": "./resources/js/Pages/TeamsIndex.vue",
 	"./TeamsIndex.vue": "./resources/js/Pages/TeamsIndex.vue",
+	"./TeamsInvitations": "./resources/js/Pages/TeamsInvitations.vue",
+	"./TeamsInvitations.vue": "./resources/js/Pages/TeamsInvitations.vue",
 	"./link": "./resources/js/Pages/link.vue",
 	"./link.vue": "./resources/js/Pages/link.vue",
 	"./test": "./resources/js/Pages/test.vue",

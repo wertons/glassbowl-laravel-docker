@@ -16,44 +16,41 @@
                         <th class="actions w-1/4">Actions</th>
                     </tr>
                 </thead>
-                <div v-for="team in teams" :key="team.id" class="w-full">
-                    <div v-for="user in team.users" :key="user.id" class="w-full">
-                        <tbody>
+                <tbody>
 
-                            <tr v-if="user.id == logged.id && user.pivot.joined">
-                                <td>
-                                    {{team.name}}
-                                </td>
-                                <td>
-                                    {{team.description}}
-                                </td>
-                                <td>
-                                    {{team.created_at}}
-                                </td>
-                                <td>
-                                    <div v-for="user in team.users" :key="user.id">
-                                        <span v-if="user.pivot.isOwner">
-                                            {{user.email}}
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="actions">
+                    <tr v-for="team in teams" :key="team.id">
+                        <td>
+                            {{team.name}}
+                        </td>
+                        <td>
+                            {{team.description}}
+                        </td>
+                        <td>
+                            {{team.created_at}}
+                        </td>
+                        <td>
+                            <div v-for="user in team.users" :key="user.id">
+                                <span v-if="user.pivot.isOwner">
+                                    {{user.email}}
+                                </span>
+                            </div>
+                        </td>
+                        <td class="actions">
 
-                                    <ComponentsFormActionButton tooltip="Schools" color="yellow"
-                                        :href="'/schools/'+team.id+'/index'" :icon="'fa-layer-group'" />
-                                    <ComponentsFormActionButton tooltip="Members" color="blue" :type="'post'"
-                                        :href="'/teams/'+team.id+'/members'" :icon="'fa-users'" />
-                                    <ComponentsFormActionButton tooltip="Edit" color="green" :type="'post'"
-                                        :href="'/teams/'+team.id+'/edit'" :icon="'fa-edit'" />
-                                    <ComponentsFormActionButton tooltip="Delete" color="red" :type="'form'"
-                                        :href="'/teams/'+team.id" :icon="'fa-trash'" />
+                            <ComponentsFormActionButton tooltip="Schools" color="yellow"
+                                :href="'/schools/'+team.id+'/index'" :icon="'fa-layer-group'" />
+                            <ComponentsFormActionButton tooltip="Members" color="blue" :type="'post'"
+                                :href="'/teams/'+team.id+'/members'" :icon="'fa-users'" />
+                            <ComponentsFormActionButton tooltip="Edit" color="green" :type="'post'"
+                                :href="'/teams/'+team.id+'/edit'" :icon="'fa-edit'" />
+                            <ComponentsFormActionButton tooltip="Delete" color="red" :type="'form'"
+                                :href="'/teams/'+team.id" :icon="'fa-trash'" />
 
-                                </td>
-                            </tr>
+                        </td>
+                    </tr>
 
-                        </tbody>
-                    </div>
-                </div>
+                </tbody>
+
             </table>
         </div>
     </LayoutsApp>
@@ -92,11 +89,7 @@
                 });
             });
         },
-        computed: {
-            logged() {
-                return this.$page.props.auth.user
-            }
-        },
+   
     }
 
 </script>
