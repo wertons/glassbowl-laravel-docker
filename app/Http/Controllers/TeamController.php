@@ -163,8 +163,18 @@ class TeamController extends Controller
             return $query->where('id', auth()->user()->id);
         })->get();
 
+        $teamsParsed = (new Team)->newCollection();
+
+        foreach ($teams as $team) {
+            foreach ($team->users as $user) {
+                if ($user->id == auth()->user()->id && !$user->pivot->joined) {
+                    $teamsParsed->add($team);
+                }
+            }
+        }
+
         return Inertia::render('TeamsInvitations', [
-            'teams' => $teams
+            'teams' => $teamsParsed
         ]);
     }
 
