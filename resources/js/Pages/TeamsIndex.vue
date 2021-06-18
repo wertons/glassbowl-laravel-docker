@@ -39,7 +39,7 @@
 
                             <ComponentsFormActionButton tooltip="Schools" color="yellow"
                                 :href="'/schools/'+team.id+'/index'" :icon="'fa-layer-group'" />
-                            <ComponentsFormActionButton tooltip="Members" color="blue" :type="'post'"
+                            <ComponentsFormActionButton tooltip="Members" color="blue" 
                                 :href="'/teams/'+team.id+'/members'" :icon="'fa-users'" />
                             <ComponentsFormActionButton tooltip="Edit" color="green" :type="'post'"
                                 :href="'/teams/'+team.id+'/edit'" :icon="'fa-edit'" />

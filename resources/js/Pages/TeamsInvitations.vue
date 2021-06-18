@@ -8,11 +8,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th>{{__('Name')}}</th>
-                        <th>{{__('Description')}}</th>
-                        <th>{{__('Created')}}</th>
-                        <th>{{__('Owner')}}</th>
-                        <th class="actions">{{__('Actions')}}</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created</th>
+                        <th>Owner</th>
+                        <th class="actions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,16 +35,14 @@
                             </div>
                         </td>
                         <td class="actions">
-                            <x-form.action-button tooltip="Accept" color="green" type="post" class="fa-check"
-                                :href="route('teams.accept', ['team'=>$team])" />
-                            <x-form.action-button tooltip="Decline" color="red" type="post" class="fa-times"
-                                :href="route('teams.decline', ['team'=>$team])" />
+            
+                            <ComponentsFormActionButton tooltip="Accept" color="green" :type="'post'"
+                                :href="'/teams/'+team.id+'/accept'" :icon="'fa-check'" />
+                            <ComponentsFormActionButton tooltip="Decline" color="red" :type="'post'"
+                                :href="'/teams/'+team.id+'/decline'" :icon="'fa-times'" />
                         </td>
                     </tr>
-                    @endif
-                    @endforeach
 
-                    @endforeach
                 </tbody>
 
             </table>

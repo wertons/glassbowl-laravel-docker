@@ -10,7 +10,7 @@
         <div class="flex flex-col">
             <label for="name">Name</label>
             <input name="name" type="text" id="name">
-            <label for="description">Description (Optional)</label>
+            <label for="description">Description</label>
             <input name="description" type="text" id="description">
 
             <div class="flex flex-row space-x-1 mt-4">
@@ -48,7 +48,7 @@
         methods: {
             submit() {
                 this.$inertia.post('/teams', {
-                    title: document.querySelector("#name").value,
+                    name: document.querySelector("#name").value,
                     description: document.querySelector("#description").value,
 
                 })

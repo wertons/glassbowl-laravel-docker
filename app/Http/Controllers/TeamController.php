@@ -130,6 +130,10 @@ class TeamController extends Controller
     {
         $team = Team::findOrFail($id);
 
+        $team['users'] = $team->users;
+        foreach($team['users'] as $user){
+            $user['pivot'] = $user->pivot;
+        }
         return Inertia::render('TeamsMembers', [
             'team' => $team
         ]);
