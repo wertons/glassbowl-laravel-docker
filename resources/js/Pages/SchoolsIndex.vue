@@ -3,7 +3,7 @@
         <template v-slot:header>
             <ComponentsHeader title="My Schools">
                 <ComponentsFormActionButton :icon="'fa-plus'" color="green" :href="'/schools/create'" v-if="team == null" />
-                <ComponentsFormActionButton :icon="'fa-plus'" color="green" :href="'schools/'+team.id+'/create'" v-else />
+                <ComponentsFormActionButton :icon="'fa-plus'" color="green" :href="'/schools/'+team.id+'/create'" v-else />
             </ComponentsHeader>
         </template>
         <div class="overflow-x-auto">

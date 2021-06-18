@@ -41,7 +41,7 @@
                                 :href="'/schools/'+team.id+'/index'" :icon="'fa-layer-group'" />
                             <ComponentsFormActionButton tooltip="Members" color="blue" 
                                 :href="'/teams/'+team.id+'/members'" :icon="'fa-users'" />
-                            <ComponentsFormActionButton tooltip="Edit" color="green" :type="'post'"
+                            <ComponentsFormActionButton tooltip="Edit" color="green"
                                 :href="'/teams/'+team.id+'/edit'" :icon="'fa-edit'" />
                             <ComponentsFormActionButton tooltip="Delete" color="red" :type="'form'"
                                 :href="'/teams/'+team.id" :icon="'fa-trash'" />
