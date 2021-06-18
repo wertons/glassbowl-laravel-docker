@@ -34,7 +34,7 @@ class FishController extends Controller
      */
     public function indexShared(SchoolCheckPublicRequest $request, $schoolId)
     {
-        $fishs = Fish::where('school_id', $schoolId)->paginate(config('crud.paginate'));
+        $fishs = Fish::where('school_id', $schoolId)->get();
 
         $school = School::findOrFail($schoolId);
 

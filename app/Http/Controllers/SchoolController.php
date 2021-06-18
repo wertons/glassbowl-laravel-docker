@@ -32,7 +32,7 @@ class SchoolController extends Controller
     public function teamIndex(TeamRequest $request, $id)
     {
         $team = Team::findOrFail($id);
-        $schools = School::where('team_id', $id)->paginate(config('crud.paginate'));
+        $schools = School::where('team_id', $id)->get();
 
         return Inertia::render('SchoolsIndex', [
             'schools' => $schools,
