@@ -1,85 +1,72 @@
 <template>
-    <x-app-layout>
-    <x-slot name="header">
-        <x-header title="Create new School">
-        </x-header>
-    </x-slot>
-
-    @if($team == null)
-    <?php echo Form::open(['route' => 'schools.store']) ?>
-    @csrf
-    @method('POST')
-
-    <div class="flex flex-col">
-        <?php echo Form::label('title', __('Title'), ['class' => '']) ?>
-        <?php echo Form::text('title', '', ['class' => '']) ?>
-
-        <?php echo Form::label('description', __('Description (Optional)'), ['class' => '']) ?>
-        <?php echo Form::text('description', '', ['class' => '']) ?>
-
-        <div class="flex flex-row space-x-1 mt-4">
-            <x-form.button href="{{route('schools.index') }}" color="red" icon="arrow-left">{{__('Cancel')}}</x-form.button>
-            <x-form.button color="green" icon="save" type="submit">{{__('Save')}}</x-form.button>
+    <LayoutsApp>
+        <template v-slot:header>
+            <ComponentsHeader title="Create new School">
+            </ComponentsHeader>
+        </template>
+        <div class="flex flex-col" v-if="!team">
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title">
+            <label for="description">Description (Optional)</label>
+            <input name="description" type="text" id="description">
+                <div class="flex flex-row space-x-1 mt-4">
+                    <ComponentsFormButton href="/schools" color="red" icon="arrow-left">
+                        Cancel
+                    </ComponentsFormButton>
+                    <ComponentsFormButton color="green" icon="save" type="submit"  @clicked="submit">Save</ComponentsFormButton>
+                </div>
         </div>
-
-        <?php echo Form::close(); ?>
-
-    </div>
-    @else
-    <?php echo Form::open(['route' => ['schools.teamStore', ['team' => $team]]]) ?>
-
-    @csrf
-    @method('POST')
-
-    <div class="flex flex-col">
-        <?php echo Form::label('title', __('Title'), ['class' => '']) ?>
-        <?php echo Form::text('title', '', ['class' => '']) ?>
-
-        <?php echo Form::label('description', __('Description (Optional)'), ['class' => '']) ?>
-        <?php echo Form::text('description', '', ['class' => '']) ?>
-
-        <div class="flex flex-row space-x-1 mt-4">
-            <x-form.button href="{{route('schools.teamIndex', ['team' => $team]) }}" color="red" icon="arrow-left">{{__('Cancel')}}</x-form.button>
-            <x-form.button color="green" icon="save" type="submit">{{__('Save')}}</x-form.button>
+        <div class="flex flex-col" v-else>
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title">
+            <label for="description">Description (Optional)</label>
+            <input name="description" type="text" id="description">
+                <div class="flex flex-row space-x-1 mt-4">
+                    <ComponentsFormButton :href="`/schools/${team.id}/index`" color="red" icon="arrow-left">
+                        Cancel
+                    </ComponentsFormButton>
+                    <ComponentsFormButton color="green" icon="save" type="submit" @clicked="submitTeam">Save
+                    </ComponentsFormButton>
+                </div>
         </div>
-
-        <?php echo Form::close(); ?>
-
-    </div>
-    @endif
-
-</x-app-layout>
+    </LayoutsApp>
 </template>
 <script>
     import LayoutsApp from './LayoutsApp.vue';
     import ComponentsHeader from './ComponentsHeader.vue';
     import ComponentsFormActionButton from './ComponentsFormActionButton.vue';
+    import ComponentsFormButton from './ComponentsFormButton.vue';
 
     export default {
         components: {
             LayoutsApp,
             ComponentsHeader,
-            ComponentsFormActionButton
+            ComponentsFormActionButton,
+            ComponentsFormButton
+                
         },
         props: [
             'schools',
             'team'
         ],
         created: function () {
-            document.querySelectorAll(".marketplace-searcher").forEach(input => {
-                input.addEventListener("change", (ev) => {
 
-                    let text = ev.target.value;
-                    document.querySelectorAll(".searchable-" + ev.target.name).forEach(row => {
-                        if (!row.innerHTML.includes(text.trim())) {
-                            row.parentElement.classList.add("hidden");
-                        } else {
-                            row.parentElement.classList.remove("hidden");
+        },
+        methods: {
+            submit() {
+                this.$inertia.post('/schools', {
+                    title: document.querySelector("#title").value,
+                    description: document.querySelector("#description").value,
 
-                        }
-                    });
-                });
-            });
+                })
+            },
+            submitTeam() {
+                this.$inertia.post('/schools/' + this.team.id + '/store', {
+                    title: document.querySelector("#title").value,
+                    description: document.querySelector("#description").value,
+
+                })
+            },
         }
     }
 

@@ -18,8 +18,7 @@ class FishController extends Controller
      */
     public function index($schoolId)
     {
-        $fishs = Fish::where('school_id', $schoolId)->paginate(config('crud.paginate'));
-
+        $fishs = Fish::where('school_id', $schoolId)->get();
         $school = School::findOrFail($schoolId);
 
         return Inertia::render('FishIndex', [

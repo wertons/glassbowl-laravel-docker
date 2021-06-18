@@ -33,7 +33,7 @@
                         <td class="actions">
                         </td>
                     </tr>
-                    <tr v-for="school in schools" :key="school">
+                    <tr v-for="school in schools" :key="school.id">
                         <td class="searchable-title searchable">
                             {{school.title}}
                         </td>
@@ -44,18 +44,16 @@
                             {{school.created_at}}
                         </td>
                         <td class="actions">
-                            <ComponentsFormActionButton tooltip="Fishes" color="yellow" class="fa-fish"
-                                :href="'fish/'+school.id" />
-
-                            <ComponentsFormActionButton tooltip="Share" color="green" type="post" class="fa-share"
-                                :href="'/schools/'+school.id+'/share'"
+                            <ComponentsFormActionButton tooltip="Fishes" color="yellow" 
+                                :href="'fish/'+school.id" :icon="'fa-fish'"/>
+                            <ComponentsFormActionButton tooltip="Share" color="green" :type="'post'" ç
+                                :href="'/schools/'+school.id+'/share'" :icon="'fa-share'"
                                 v-if="school.user_id != null && school.shared == false" />
-                            <ComponentsFormActionButton tooltip="Unshare" color="red" type="post" class="fa-share"
+                            <ComponentsFormActionButton tooltip="Unshare" color="red" :type="'post'" :icon="'fa-share'"
                                 :href="'/schools/'+school.id+'/unshare'" v-else />
-
-                            <ComponentsFormActionButton tooltip="Edit" color="green" class="fa-edit"
+                            <ComponentsFormActionButton tooltip="Edit" color="green" :icon="'fa-edit'"
                                 :href="'/schools/'+school.id+'/edit'" />
-                            <ComponentsFormActionButton tooltip="Delete" color="red" type="form" class="fa-trash"
+                            <ComponentsFormActionButton tooltip="Delete" color="red" :type="'form'" :icon="'fa-trash'"
                                 :href="'/schools/'+school.id" />
                         </td>
                         <td></td>

@@ -47,17 +47,17 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <inertia-link class="" href="/login/google">
+                    <a class="" href="/login/google" type="button">
                         <ComponentsButton class="ml-3" type="button">
                             Login Google
                         </ComponentsButton>
-                    </inertia-link>
+                    </a>
 
-                    <inertia-link class="" href="/login/github">
+                    <a class="" href="/login/github" >
                         <ComponentsButton class="ml-3" type="button">
                             Login Github
                         </ComponentsButton>
-                    </inertia-link>
+                    </a>
 
                     <ComponentsButton class="ml-3">
                         Log in
