@@ -22,15 +22,17 @@ class TeamController extends Controller
             return $query->where('id', auth()->user()->id);
         })->get();
 
-        foreach ($teams as $team) {
-            $team['users'] =$team->users;
-            foreach($team['users'] as $user) {
-                $user['pivot'] = $user->pivot;
+        $teamsParsed = (new Team)->newCollection();
 
+        foreach ($teams as $team) {
+            foreach ($team->users as $user) {
+                if ($user->id == auth()->user()->id && $user->pivot->joined) {
+                    $teamsParsed->add($team);
+                }
             }
         }
         return Inertia::render('TeamsIndex', [
-            'teams' => $teams
+            'teams' => $teamsParsed
         ]);
     }
 
