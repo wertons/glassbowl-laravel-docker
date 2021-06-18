@@ -156,7 +156,7 @@ class TeamController extends Controller
 
         $team->users()->attach($user);
 
-        return Inertia::render('TeamsMembers', [
+        return redirect()->route('teams.members', [
             'team' => $team
         ]);
     }
