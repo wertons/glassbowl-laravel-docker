@@ -5418,17 +5418,11 @@ __webpack_require__.r(__webpack_exports__);
     ComponentsFormActionButton: _ComponentsFormActionButton_vue__WEBPACK_IMPORTED_MODULE_2__.default,
     ComponentsFormButton: _ComponentsFormButton_vue__WEBPACK_IMPORTED_MODULE_3__.default
   },
-  props: ['schools', 'team'],
+  props: ['school'],
   created: function created() {},
   methods: {
     submit: function submit() {
-      this.$inertia.post('/schools', {
-        title: document.querySelector("#title").value,
-        description: document.querySelector("#description").value
-      });
-    },
-    submitTeam: function submitTeam() {
-      this.$inertia.post('/schools/' + this.team.id + '/store', {
+      this.$inertia.post('/fish' + school.id, {
         title: document.querySelector("#title").value,
         description: document.querySelector("#description").value
       });
@@ -31182,8 +31176,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "LayoutsApp",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c("ComponentsHeader", { attrs: { title: "Create new Fish" } })
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(
+        "\n\n    <?php echo Form::open(['route' => ['fish.store', 'school' => $school->id]]) ?>\n    @csrf\n    @method('POST')\n\n    "
+      ),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c("label", { attrs: { for: "title" } }, [_vm._v("Title")]),
+        _vm._v(" "),
+        _c("input", { attrs: { name: "title", type: "text", id: "title" } }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "description" } }, [
+          _vm._v("Description (Optional)")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { name: "description", type: "text", id: "description" }
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "url" } }, [_vm._v("URL")]),
+        _vm._v(" "),
+        _c("input", { attrs: { name: "url", type: "text", id: "url" } }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "flex flex-row space-x-1 mt-4" },
+          [
+            _c(
+              "ComponentsFormButton",
+              {
+                attrs: {
+                  href: "/fish/" + _vm.school.id,
+                  color: "red",
+                  icon: "arrow-left"
+                }
+              },
+              [_vm._v("\n               Cancel\n               ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "ComponentsFormButton",
+              {
+                attrs: { color: "green", icon: "save", type: "submit" },
+                on: { clicked: _vm.submit }
+              },
+              [_vm._v("Save")]
+            )
+          ],
+          1
+        ),
+        _vm._v("\n\n        <?php echo Form::close(); ?>\n\n    ")
+      ])
+    ]
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 

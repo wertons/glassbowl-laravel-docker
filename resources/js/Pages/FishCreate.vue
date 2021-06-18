@@ -1,37 +1,37 @@
 <template>
-    <x-app-layout>
-    <x-slot name="header">
-        <x-header title="Create new Fish">
-        </x-header>
-    </x-slot>
+    <LayoutsApp>
+        <template v-slot:header>
+            <ComponentsHeader title="Create new Fish">
+            </ComponentsHeader>
+        </template>
 
-    <?php echo Form::open(['route' => ['fish.store', 'school' => $school->id]]) ?>
-    @csrf
-    @method('POST')
+        <?php echo Form::open(['route' => ['fish.store', 'school' => $school->id]]) ?>
+        @csrf
+        @method('POST')
 
-    <div class="flex flex-col">
-        <?php echo Form::label('title', __('Title'), ['class' => '']) ?>
-        <?php echo Form::text('title', '', ['class' => '']) ?>
+        <div class="flex flex-col">
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title">
+            <label for="description">Description (Optional)</label>
+            <input name="description" type="text" id="description">
+            <label for="url">URL</label>
+            <input name="url" type="text" id="url">
 
-        <?php echo Form::label('description', __('Description (Optional)'), ['class' => '']) ?>
-        <?php echo Form::text('description', '', ['class' => '']) ?>
+            <div class="flex flex-row space-x-1 mt-4">
+                <ComponentsFormButton :href="`/fish/${school.id}`" color="red" icon="arrow-left">
+                   Cancel
+                   </ComponentsFormButton>
+                <ComponentsFormButton color="green" icon="save" type="submit" @clicked="submit">Save</ComponentsFormButton>
+            </div>
 
-        <?php echo Form::label('url', __('URL'), ['class' => '']) ?>
-        <?php echo Form::text('url', '', ['class' => '']) ?>
+            <?php echo Form::close(); ?>
 
-        <div class="flex flex-row space-x-1 mt-4">
-            <x-form.button href="{{route('fish.index', ['school' => $school->id]) }}" color="red" icon="arrow-left">{{__('Cancel')}}</x-form.button>
-            <x-form.button color="green" icon="save" type="submit">{{__('Save')}}</x-form.button>
         </div>
 
-        <?php echo Form::close(); ?>
-
-    </div>
-
-</x-app-layout>
+    </LayoutsApp>
 </template>
 <script>
- import LayoutsApp from './LayoutsApp.vue';
+    import LayoutsApp from './LayoutsApp.vue';
     import ComponentsHeader from './ComponentsHeader.vue';
     import ComponentsFormActionButton from './ComponentsFormActionButton.vue';
     import ComponentsFormButton from './ComponentsFormButton.vue';
@@ -42,30 +42,23 @@
             ComponentsHeader,
             ComponentsFormActionButton,
             ComponentsFormButton
-                
+
         },
         props: [
-            'schools',
-            'team'
+            'school'
         ],
         created: function () {
 
         },
         methods: {
             submit() {
-                this.$inertia.post('/schools', {
+                this.$inertia.post('/fish'+school.id, {
                     title: document.querySelector("#title").value,
                     description: document.querySelector("#description").value,
 
                 })
             },
-            submitTeam() {
-                this.$inertia.post('/schools/' + this.team.id + '/store', {
-                    title: document.querySelector("#title").value,
-                    description: document.querySelector("#description").value,
-
-                })
-            },
+        
         }
     }
 
