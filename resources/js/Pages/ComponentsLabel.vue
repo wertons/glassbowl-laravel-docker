@@ -1,7 +1,7 @@
 <template>
 
     <label :class="'block font-medium text-sm text-gray-700'">
-        <span v-if="value"></span>
+        <span v-if="value">{{value}}</span>
         <slot v-else></slot>
     </label>
 

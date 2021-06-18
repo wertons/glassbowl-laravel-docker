@@ -30541,7 +30541,7 @@ var render = function() {
   return _c(
     "label",
     { class: "block font-medium text-sm text-gray-700" },
-    [_vm.value ? _c("span") : _vm._t("default")],
+    [_vm.value ? _c("span", [_vm._v(_vm._s(_vm.value))]) : _vm._t("default")],
     2
   )
 }
