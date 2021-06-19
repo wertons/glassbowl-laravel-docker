@@ -19,6 +19,6 @@
 
 - The project uses sail to manage the docker enviroment use the command ```php artisan sail:install``` to prepare the enviroment, then when prompted enter ```0``` in order to install mysql dependencies
 
-- Now to serve the sail container run ```./vendor/bin/sail up```
+- Now to serve the sail container run ```sudo ./vendor/bin/sail up```
 
 - You should also run the command ```./vendor/bin/sail artisan migrate``` in order to migrate the db. Then run ```php artisan key:generate``` to create keys for the API
