@@ -34054,7 +34054,7 @@ var render = function() {
                         attrs: {
                           tooltip: "Fishes",
                           color: "yellow",
-                          href: "fish/" + school.id,
+                          href: "/fish/" + school.id,
                           icon: "fa-fish"
                         }
                       }),
@@ -34065,12 +34065,12 @@ var render = function() {
                               tooltip: "Share",
                               color: "green",
                               type: "post",
-                              ç: "",
                               href: "/schools/" + school.id + "/share",
                               icon: "fa-share"
                             }
                           })
-                        : _c("ComponentsFormActionButton", {
+                        : school.shared != false
+                        ? _c("ComponentsFormActionButton", {
                             attrs: {
                               tooltip: "Unshare",
                               color: "red",
@@ -34078,7 +34078,8 @@ var render = function() {
                               icon: "fa-share",
                               href: "/schools/" + school.id + "/unshare"
                             }
-                          }),
+                          })
+                        : _vm._e(),
                       _vm._v(" "),
                       _c("ComponentsFormActionButton", {
                         attrs: {
